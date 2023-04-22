@@ -4,5 +4,7 @@
 ---
 | File      | Description |
 | ----------- | ----------- |
-| ticTacToe|simple ticTacToe game|![ticTacToe](ticTacToe.png)
+| ticTacToe|simple ticTacToe game|
+![ticTacToe](ticTacToe.png)
 | turtleDraw|draw some creative shape|
+![turtleDraw](turtleDraw.png)
