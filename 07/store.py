@@ -1,11 +1,10 @@
-PRODUCTS = [ ]
+PRODUCTS = []
 
 def readFromDataBase():
     f = open("07\dataBase.txt")
     for line in f:
         result = line.split(",")
         myDic = {"code": result[0], "name": result[1], "price": result[2], "count": result[3]}
-        print(result)
         PRODUCTS.append(myDic)
     f.close
 
@@ -30,18 +29,51 @@ def add():
     PRODUCTS.append(newProduct)
 
 def edit():
-    pass
-
+    productCode = input('enter product code for edit: ')
+    for product in PRODUCTS:
+        if product['code'] == productCode:
+            print('\nwhich item do you want to edit:')
+            print("1- Name")
+            print("2- Price")
+            print("3- Count")
+            item = int(input('your choice: '))
+            if item > 3:
+                print('enter valid item menu!')
+                break
+            else:
+                newValue = input('enter new value: ')
+                if item == 1:
+                    product['name'] = newValue
+                    print('edit name successful done')
+                    break
+                elif item == 2:
+                    product['price'] = newValue
+                    print('edit price successful done')
+                    break
+                elif item == 3:
+                    product['count'] = newValue
+                    print('edit count successful done')
+                    break
+    else:
+        print('enter valid product code!!!')
+        
 def remove():
     pass
 
 def search():
-    pass
+    userInput = input("type your keyword:")
+    for product in PRODUCTS:
+        if product['code'] == userInput or product['name'] == userInput:
+            print(product['code'], '\t\t', product['name'], '\t\t', product['price'])
+            break
+    else:
+        print('not found')
 
 def showList():
     print("code\t\tname\t\tprice\t\tcount")
     for product in PRODUCTS:
-        print(product["code"], "\t\t", product["name"], "\t\t", product["price"], "\t\t", product["count"], end="")
+        print(product["code"], "\t\t", product["name"], "\t\t", product["price"],
+               "\t\t", product["count"])
 
 def buy():
     pass
