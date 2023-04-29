@@ -1,4 +1,8 @@
 import qrcode
+<<<<<<< HEAD
+=======
+
+>>>>>>> f858a550a465b0bda85c92520a4ea81c224bf0f2
 PRODUCTS = []
 
 def readFromDataBase():
@@ -10,11 +14,16 @@ def readFromDataBase():
     f.close
 
 def writeToDataBase():
+<<<<<<< HEAD
     strWrite = ''
     f = open('07\dataBase.txt', 'w')
     for product in PRODUCTS:
         f.write(str(product['code']) + ',' + product['name'] + ',' + str(product['price']) + ',' + 
                 str(product['count']) + '\n')
+=======
+    f = open('07\dataBase.txt')
+    for product in PRODUCTS:
+>>>>>>> f858a550a465b0bda85c92520a4ea81c224bf0f2
         print(product['code'], product['name'], product['price'], product['count'])
     f.close
 
@@ -29,10 +38,17 @@ def showMenu():
     print('8- Exit')
 
 def add():
+<<<<<<< HEAD
     code = int(input('enter code: '))
     name = input('enter name: ')
     price = int(input('enter price: '))
     count = int(input('enter count: '))
+=======
+    code = input('enter code: ')
+    name = input('enter name: ')
+    price = input('enter price: ')
+    count = input('enter count: ')
+>>>>>>> f858a550a465b0bda85c92520a4ea81c224bf0f2
     newProduct = {'code': code, 'name': name, 'price': price, 'count': count}
     PRODUCTS.append(newProduct)
 
@@ -40,10 +56,17 @@ def edit():
     productCode = int(input('enter product code for edit: '))
     for product in PRODUCTS:
         if product['code'] == productCode:
+<<<<<<< HEAD
             print(f'''\nwhich item of {product['name']} do you want to edit:''')
             print(f'''1- Name  - current name  is {product['name']}''')
             print(f'''2- Price - current price is {product['price']}''')
             print(f'''3- count - current count is {product['count']}''')
+=======
+            print('\nwhich item do you want to edit:')
+            print('1- Name')
+            print('2- Price')
+            print('3- Count')
+>>>>>>> f858a550a465b0bda85c92520a4ea81c224bf0f2
             item = int(input('your choice: '))
             if item > 3:
                 print('enter valid menu item!')
@@ -70,7 +93,11 @@ def remove():
     for product in PRODUCTS:
         if product['code'] == productCode:
             PRODUCTS.remove(product)
+<<<<<<< HEAD
             print(f'''product {product['name']} removed successfully''')
+=======
+            print('product removed successfully')
+>>>>>>> f858a550a465b0bda85c92520a4ea81c224bf0f2
             break
     else:
         print('this product code not found!')
@@ -78,7 +105,11 @@ def remove():
 def search():
     userInput = input('type your keyword:')
     for product in PRODUCTS:
+<<<<<<< HEAD
         if str(product['code']) == userInput or product['name'] == userInput:
+=======
+        if product['code'] == int(userInput) or product['name'] == userInput:
+>>>>>>> f858a550a465b0bda85c92520a4ea81c224bf0f2
             print(product['code'], '\t\t', product['name'], '\t\t', product['price'])
             break
     else:
@@ -96,7 +127,11 @@ def buy():
     sumFactor = 0
 
     while (buyFlag):
+<<<<<<< HEAD
         productCode = int(input('enter product code for buy (ZERO 0 for exit): '))
+=======
+        productCode = int(input('enter product code for buy (ZIRO 0 for exit): '))
+>>>>>>> f858a550a465b0bda85c92520a4ea81c224bf0f2
         if productCode == 0:
             buyFlag = False
             break
@@ -106,8 +141,12 @@ def buy():
                 if userCount <= product['count']:
                     newCount = product['count'] - userCount
                     product['count'] = newCount
+<<<<<<< HEAD
                     tmpDic = {'code': product['code'], 'name': product['name'], 'price': product['price'],
                                'count': userCount}
+=======
+                    tmpDic = {'code': product['code'], 'name': product['name'], 'price': int(product['price']), 'count': userCount}
+>>>>>>> f858a550a465b0bda85c92520a4ea81c224bf0f2
                     buyList.append(tmpDic)
                     break
                 else:
@@ -120,7 +159,12 @@ def buy():
         print(factor['name'], ' price:', factor['price'], ' amount:', factor['count'])
         sumFactor += factor['count'] * factor['price']
     print('totall Sum of your factor is: ', sumFactor)
+<<<<<<< HEAD
     
+=======
+    print(buyList)
+
+>>>>>>> f858a550a465b0bda85c92520a4ea81c224bf0f2
 def qr():
     productCode = int(input('enter product code for generate QR: '))
     for product in PRODUCTS:
@@ -128,18 +172,34 @@ def qr():
             qrString = product
             qr = qrcode.make(qrString)
             qr.save('07\productQR.png')
+<<<<<<< HEAD
             print('QR generated successfully')
             break
     else:
          print('this product code not found!')
+=======
+            print('QR generated succesfully')
+            break
+    else:
+         print('this product code not found!')
+    
+>>>>>>> f858a550a465b0bda85c92520a4ea81c224bf0f2
 
 print('WELCOME to My Store')
 print('Loading...')
 readFromDataBase()
 print('Data Loaded')
+<<<<<<< HEAD
 while(True):
     showMenu()
     choice = int(input('enter your choice: '))
+=======
+
+while(True):
+    showMenu()
+    choice = int(input('enter your choice: '))
+
+>>>>>>> f858a550a465b0bda85c92520a4ea81c224bf0f2
     if choice == 1:
         add()
     elif choice == 2:
@@ -158,4 +218,8 @@ while(True):
         writeToDataBase()
         exit(0)
     else:
+<<<<<<< HEAD
         print('enter valid number!!!')
+=======
+        print('enter valid number')
+>>>>>>> f858a550a465b0bda85c92520a4ea81c224bf0f2
