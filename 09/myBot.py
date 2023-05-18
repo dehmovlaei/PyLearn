@@ -26,7 +26,7 @@ back_keyboard = types.ReplyKeyboardMarkup(row_width=1)
 key12 = types.KeyboardButton('/Back')
 back_keyboard.add(key12)
 
-bot = telebot.TeleBot('6095095897:AAGCe1f5KHxIkvmax7fAVhnSatvwf0ATug0', parse_mode=None)
+bot = telebot.TeleBot('TOKEN', parse_mode=None)
 
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
