@@ -128,9 +128,10 @@ def echo_all(message):
 		date_of_birth = (str(message.text)).split("/")
 		difference = khayyam.JalaliDatetime.now() - khayyam.JalaliDatetime(date_of_birth[0], date_of_birth[1], date_of_birth[2])
 		year = difference.days // 365
-		difference = difference.days % 365
+		kabiseh = year // 4
+		difference = (difference.days % 365) - kabiseh
 		month = difference // 30
-		day = (difference % 30) -7
+		day = difference % 30
 		bot.send_message(message.chat.id, "Your exact age is: "+ str(year) + " years and "+ str(month) + " months and "+ str(day) + " days.")
 	elif position == 3:
 		en_voice = gtts.gTTS(message.text, lang='en')
