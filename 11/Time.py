@@ -8,14 +8,14 @@ class Time:
     def time_to_second(self):
         pass
     
-    def second_to_time(self):
-        pass
-    
-    def convert_to_24(self):
-        pass
-    
-    def convert_to_12(self):
-        pass
+    def second_to_time(self, seconds):
+        seconds = seconds % (24 * 3600)
+        self.hour = seconds // 3600
+        seconds %= 3600
+        self.minutes = seconds // 60
+        self.seconds = seconds % 60
+        result = Time(self.hour, self.minute, self.seconds)
+        return result
     
     def change_local(self):
         pass
@@ -62,3 +62,7 @@ t2.show()
 
 t3 = t1.sum(t2)
 t3.show()
+
+t4 = Time(0, 0, 0)
+t4.second_to_time(3999)
+t4.show()
