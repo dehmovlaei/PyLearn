@@ -6,19 +6,25 @@ class Time:
         self.fix_time()
         
     def time_to_second(self):
-        pass
+        seconds = (self.hour * 3600) + (self.minute * 60) + self.second
+        return seconds
     
     def second_to_time(self, seconds):
         seconds = seconds % (24 * 3600)
         self.hour = seconds // 3600
         seconds %= 3600
-        self.minutes = seconds // 60
-        self.seconds = seconds % 60
-        result = Time(self.hour, self.minute, self.seconds)
+        self.minute = seconds // 60
+        self.second = seconds % 60
+        result = Time(self.hour, self.minute, self.second)
         return result
     
     def change_local(self):
-        pass
+        self.minute += 30
+        if self.minute >= 60:
+            self.minute %= 60
+            self.hour += 1
+        else:
+            self.hour += 3        
 
     def sum(self, other):
         h_new = self.hour + other.hour
@@ -64,5 +70,11 @@ t3 = t1.sum(t2)
 t3.show()
 
 t4 = Time(0, 0, 0)
-t4.second_to_time(3999)
+t4.second_to_time(6999)
 t4.show()
+
+print(t4.time_to_second())
+
+t5 = Time(1, 33, 0)
+t5.change_local()
+t5.show()
