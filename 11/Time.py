@@ -9,22 +9,27 @@ class Time:
         seconds = (self.hour * 3600) + (self.minute * 60) + self.second
         return seconds
     
-    def second_to_time(self, seconds):
+    @staticmethod
+    def second_to_time(seconds):
         seconds = seconds % (24 * 3600)
-        self.hour = seconds // 3600
+        hour = seconds // 3600
         seconds %= 3600
-        self.minute = seconds // 60
-        self.second = seconds % 60
-        result = Time(self.hour, self.minute, self.second)
+        minute = seconds // 60
+        second = seconds % 60
+        result = Time(hour, minute, second)
         return result
     
     def change_local(self):
+        """
         self.minute += 30
         if self.minute >= 60:
             self.minute %= 60
             self.hour += 1
         else:
             self.hour += 3        
+        """
+        tehran_time = self.sum(Time(3, 30, 0))
+        return tehran_time      
 
     def sum(self, other):
         h_new = self.hour + other.hour
@@ -69,12 +74,12 @@ t2.show()
 t3 = t1.sum(t2)
 t3.show()
 
-t4 = Time(0, 0, 0)
-t4.second_to_time(6999)
+t4 = Time.second_to_time(6999)
 t4.show()
 
 print(t4.time_to_second())
 
 t5 = Time(1, 33, 0)
-t5.change_local()
+t6 = t5.change_local()
 t5.show()
+t6.show()
