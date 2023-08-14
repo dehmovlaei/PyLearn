@@ -1,4 +1,5 @@
 class Time:
+    
     def __init__(self, h, m, s):
         self.hour = h
         self.minute = m
