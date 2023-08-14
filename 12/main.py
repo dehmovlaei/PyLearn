@@ -10,24 +10,21 @@ class Database:
     def read(self):
         data = open('12\database.txt', 'r')
         for line in data:
+            #remove /n from line
+            line = line.strip()
             detail = line.split(',')
-            my_obj = Media(
-                detail[0],
-                detail[1],
-                detail[2],
-                detail[3],
-                detail[4],
-                detail[5],
-                detail[6],
-            )
+            my_obj = Media(detail[0], detail[1], detail[2], detail[3], detail[4], detail[5], detail[6])
             MEDIA_LIST.append(my_obj)
         data.close()
 
     def write(self):
         data = open('12\database.txt', 'w')
         for obj in MEDIA_LIST:
-            result = f'{obj.type},{obj.name},{obj.director},{obj.imdb_score},{obj.url},{obj.duration},{obj.casts}'
-            data.write(result)
+            # result = f'{obj.type},{obj.name},{obj.director},{obj.imdb_score},{obj.url},{obj.duration},{obj.casts}'
+            # data.write(result)
+            data.write(obj.type + ',' + obj.name + ',' + obj.director + ',' + obj.imdb_score
+                       + ',' + obj.url + ',' + obj.duration + ',' + obj.casts + '\n'
+                        )
 
 
 class Store:
