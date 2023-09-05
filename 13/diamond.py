@@ -14,10 +14,10 @@ for row in range(10):
         x = column * raw_col + l_margin
         y = row * raw_row + b_margin
         if column % 2 == 0 and row %2 == 0  or column % 2 == 1 and row %2 == 1:
-            arcade.draw_triangle_filled(x - 10,y, x, y + 10,x + 10,y, arcade.color.RED)
-            arcade.draw_triangle_filled(x - 10,y, x, y - 10,x + 10,y, arcade.color.RED)           
+            arcade.draw_triangle_filled(x - 20,y, x, y + 20,x + 20,y, arcade.color.RED)
+            arcade.draw_triangle_filled(x - 20,y, x, y - 20,x + 20,y, arcade.color.RED)           
         if column % 2 == 1 and row % 2 == 0  or column % 2 == 0 and row % 2 == 1:
-            arcade.draw_triangle_filled(x - 10,y, x, y + 10,x + 10,y, arcade.color.BLUE)
-            arcade.draw_triangle_filled(x - 10,y, x, y - 10,x + 10,y, arcade.color.BLUE)
+            arcade.draw_triangle_filled(x - 20,y, x, y + 20,x + 20,y, arcade.color.BLUE)
+            arcade.draw_triangle_filled(x - 20,y, x, y - 20,x + 20,y, arcade.color.BLUE)
 arcade.finish_render()
 arcade.run()
