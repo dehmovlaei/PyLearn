@@ -1,6 +1,5 @@
 import arcade
 from bullet import Bullet
-
 class Spaceship(arcade.Sprite):
     def __init__(self, game):
         super().__init__(':resources:images/space_shooter/playerShip1_blue.png')
@@ -13,6 +12,8 @@ class Spaceship(arcade.Sprite):
         self.speed = 8
         self.game_width = game.width
         self.bullet_list = []
+        self.fire_sound = arcade.load_sound(':resources:sounds/laser2.wav',False)
+        self.destruction_sound = arcade.load_sound(':resources:sounds/lose3.wav',False)
     
     def move(self):
         if self.change_x == -1 and self.center_x > 0:
@@ -23,3 +24,7 @@ class Spaceship(arcade.Sprite):
     def fire(self):
         new_bullet = Bullet(self)
         self.bullet_list.append(new_bullet)
+        arcade.play_sound(self.fire_sound)
+
+    def destruction(self):
+        arcade.play_sound(self.destruction_sound)
