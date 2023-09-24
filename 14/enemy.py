@@ -13,7 +13,7 @@ class Enemy(arcade.Sprite):
 
     def move(self):
         self.center_y -= self.speed
-        self.speed += 0.1
+        self.speed += 0.01
 
     def destruction(self):
         arcade.play_sound(self.destruction_sound)
