@@ -24,6 +24,7 @@ class Snake(arcade.Sprite):
         self.change_x = 0
         self.change_y = 0
         self.speed = 4
+        self.score = 0
 
     def draw(self):
         arcade.draw_circle_filled(self.center_x, self.center_y, self.radius, self.color)
@@ -31,6 +32,10 @@ class Snake(arcade.Sprite):
     def move(self):
         self.center_x += self.change_x * self.speed
         self.center_y += self.change_y * self.speed
+
+    def eat(self):
+        self.score += 1
+        
 
 class Game(arcade.Window):
     def __init__(self):
@@ -48,6 +53,12 @@ class Game(arcade.Window):
 
     def on_update(self, delta_time: float):
         self.snake.move()
+
+        if arcade.check_for_collision(self.snake, self.food):
+            self.snake.eat()
+            print('Score:', self.snake.score)
+            del self.food
+            self.food = Apple(self)
 
     def on_key_release(self, symbol: int, modifiers: int):
         if symbol == arcade.key.UP:
