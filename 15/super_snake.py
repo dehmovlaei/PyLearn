@@ -11,7 +11,6 @@ class Apple(arcade.Sprite):
         self.change_x = 0
         self.change_y = 0
     
-
 class Snake(arcade.Sprite):
     def __init__(self, game):
         super().__init__()
@@ -33,10 +32,11 @@ class Snake(arcade.Sprite):
         self.center_x += self.change_x * self.speed
         self.center_y += self.change_y * self.speed
 
-    def eat(self):
+    def eat(self, food):
+        del food
         self.score += 1
-        
-
+        print('Score:', self.score)
+                
 class Game(arcade.Window):
     def __init__(self):
         super().__init__(width = 500, height = 500, title = 'SUPER SNAKE 🐍 V1',center_window = True)
@@ -55,9 +55,7 @@ class Game(arcade.Window):
         self.snake.move()
 
         if arcade.check_for_collision(self.snake, self.food):
-            self.snake.eat()
-            print('Score:', self.snake.score)
-            del self.food
+            self.snake.eat(self.food)
             self.food = Apple(self)
 
     def on_key_release(self, symbol: int, modifiers: int):
@@ -73,7 +71,6 @@ class Game(arcade.Window):
         elif symbol == arcade.key.RIGHT:
             self.snake.change_x = 1
             self.snake.change_y = 0
-
 
 if __name__ == '__main__':
      game = Game()
