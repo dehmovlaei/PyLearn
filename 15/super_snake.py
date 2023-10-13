@@ -39,7 +39,7 @@ class Snake(arcade.Sprite):
 
 class Game(arcade.Window):
     def __init__(self):
-        super().__init__(width = 500, height = 500, title = 'SUPER SNAKE 🐍 V1')
+        super().__init__(width = 500, height = 500, title = 'SUPER SNAKE 🐍 V1',center_window = True)
         arcade.set_background_color(arcade.color.KHAKI)
 
         self.food = Apple(self)
