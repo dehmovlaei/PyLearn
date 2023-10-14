@@ -1,8 +1,8 @@
 import arcade
 
 class Stuff(arcade.Sprite):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, shape):
+        super().__init__(shape)
         self.width = 33
         self.height = 33
         self.center_x = 0
