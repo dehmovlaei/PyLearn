@@ -38,9 +38,10 @@ class Game(arcade.Window):
                     self.score = self.snake.eat(food)
                     self.food = []
                     self.init_food()
-            for part in self.snake.body:
-                if arcade.check_for_collision(part, self.snake):
-                    self.game_over = True
+            for count, part in enumerate(self.snake.body):
+                for i in range(count + 1, len(self.snake.body)):
+                    if part['x'] == self.snake.body[i]['x'] and part['y'] == self.snake.body[i]['y']:
+                        self.game_over = True
             if (
                 self.snake.center_x < 0 or self.snake.center_x > 500 or self.snake.center_y < 0
                 or self.snake.center_y > 500 or self.score < 0

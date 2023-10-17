@@ -4,6 +4,7 @@
 ---
 | File      | Description |
 | ----------- | ----------- |
-|Interstellar|a Mini Game on progress |
-![concentric](Interstellar.jpg)
-![concentric](GameOver_Screen.jpg)
+|super snake|a Mini Game on progress |
+|super_snake_AI|very simple AI play game|
+![concentric](super_snake.png)
+![concentric](GameOver.jpg)
