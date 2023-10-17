@@ -11,15 +11,15 @@ class Snake(arcade.Sprite):
         self.colors = [arcade.color.GREEN_YELLOW, arcade.color.AIR_FORCE_BLUE]
         self.change_x = 0
         self.change_y = 0
-        self.speed = 2
+        self.speed = 5
         self.score = 0
         self.body = []
-        
+        self.body.append({'x':self.center_x, 'y':self.center_y})
     def draw(self):
         arcade.draw_circle_filled(self.center_x, self.center_y, self.radius, self.colors[0])
         
         for count, part in enumerate(self.body):
-            arcade.draw_circle_filled(part['x'], part ['y'], self.radius, self.colors[(count%2)])
+            arcade.draw_circle_filled(part['x'], part['y'], self.radius, self.colors[(count%2)])
 
 
     def move(self):
@@ -33,3 +33,4 @@ class Snake(arcade.Sprite):
     def eat(self,food):
         self.score += food.score
         print('Score:', self.score)
+        return self.score

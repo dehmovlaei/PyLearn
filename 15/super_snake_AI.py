@@ -38,8 +38,8 @@ class Game(arcade.Window):
                     self.score = self.snake.eat(food)
                     self.food = []
                     self.init_food()
-            for part in self.snake.body:
-                if arcade.check_for_collision(part, self.snake):
+            for part in self.snake.body[1:]:
+                if part['x'] == self.snake.center_x and part['y'] == self.snake.center_y:
                     self.game_over = True
             if (
                 self.snake.center_x < 0 or self.snake.center_x > 500 or self.snake.center_y < 0
@@ -47,20 +47,19 @@ class Game(arcade.Window):
             ):
                 self.game_over = True
            
-    def on_key_release(self, symbol: int, modifiers: int):
-        if symbol == arcade.key.UP:
-            self.snake.change_x = 0
-            self.snake.change_y = 1
-        elif symbol == arcade.key.DOWN:
-            self.snake.change_x = 0
-            self.snake.change_y = -1
-        elif symbol == arcade.key.LEFT:
-            self.snake.change_x = -1
-            self.snake.change_y = 0
-        elif symbol == arcade.key.RIGHT:
+        if self.snake.center_x < self.food[1].center_x:
             self.snake.change_x = 1
             self.snake.change_y = 0
-        
+            if self.snake.center_y < self.food[1].center_y:
+                self.snake.change_x = 0
+                self.snake.change_y = 1
+        if self.snake.center_x > self.food[1].center_x:
+            self.snake.change_x = -1
+            self.snake.change_y = 0
+            if self.snake.center_y > self.food[1].center_y:
+                self.snake.change_x = 0
+                self.snake.change_y = -1
+   
 if __name__ == '__main__':
      game = Game()
      arcade.run()
