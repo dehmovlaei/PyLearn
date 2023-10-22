@@ -1,58 +1,6 @@
-import random
 import arcade
-
-class Ball(arcade.Sprite):
-    def __init__(self, game):
-        super().__init__()
-        self.center_x = game.width//2
-        self.center_y = game.height//2
-        self.color = arcade.color.YELLOW
-        self.radius = 15
-        self.change_x = random.choice([-1, 1])
-        self.change_y = random.choice([-1, 1])
-        self.speed = 5
-        self.width = self.radius * 2
-        self.height = self.radius * 2
-
-    def move(self):
-        self.center_x += self.change_x * self.speed
-        self.center_y += self.change_y * self.speed
-
-    def draw(self):
-        arcade.draw_circle_filled(self.center_x, self.center_y, self.radius, self.color)
-
-class Rocket(arcade.Sprite):
-    def __init__(self, x, y, c, n):
-        super().__init__()
-        self.center_x = x
-        self. center_y = y
-        self.color = c
-        self.name = n
-        self.change_x = 0
-        self.change_y = 0
-        self.width = 10
-        self.height = 60
-        self.speed = 4
-        self.score = 0
-    
-    def move(self, game):
-        if game.ball.center_x > game.width//2:
-            
-            if self.center_y > game.ball.center_y:
-                self.change_y = -1
-            if self.center_y < game.ball.center_y:
-                self.change_y = 1
-            self.center_y += self.change_y * self.speed
-
-            if self.center_y < 60:
-                self.center_y = 60
-            if self.center_y > game.height - 60:
-                self.center_y =  game.height - 60
-
-    def draw(self):
-        arcade.draw_rectangle_filled(self.center_x, self.center_y, self.width,
-                                     self.height, self.color)
-
+from rocket import Rocket
+from ball import Ball
 class Game(arcade.Window):
     def __init__(self):
         super().__init__(width=800, height=500, title='Pong 2023 🏓🏓', center_window=True)
