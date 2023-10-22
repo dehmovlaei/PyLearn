@@ -22,7 +22,8 @@ class Game(arcade.Window):
         self.player1.draw()
         self.player2.draw()
         self.ball.draw()
-
+        arcade.draw_text(f'{self.player1.name} SCORE: {self.player1.score}', 100, 450, arcade.color.ALABAMA_CRIMSON, 15, 2,'left',('calibri', 'arial'), True)
+        arcade.draw_text(f'{self.player2.name} SCORE: {self.player2.score}', 500, 450, arcade.color.ALABAMA_CRIMSON, 15, 2,'left',('calibri', 'arial'), True)
         arcade.finish_render
 
     def on_mouse_motion(self, x: int, y: int, dx: int, dy: int):
