@@ -3,8 +3,8 @@ from rocket import Rocket
 from ball import Ball
 class Game(arcade.Window):
     def __init__(self):
-        super().__init__(width=800, height=500, title='Pong 2023 🏓🏓', center_window=True)
-        arcade.set_background_color(arcade.color.DARK_GREEN)
+        super().__init__(width=500, height=700, title='arkanoid 🔵🔵🔵', center_window=True)
+        self.background = arcade.load_texture(':resources:images/backgrounds/abstract_1.jpg')
         self.player1 = Rocket(40, self.height//2, arcade.color.RED, 'dehmovlaei')
         self.player2 = Rocket(self.width-40, self.height//2, arcade.color.CYAN, 'CPU')
         self.sprite_list = arcade.SpriteList()
@@ -15,6 +15,7 @@ class Game(arcade.Window):
 
     def on_draw(self):
         arcade.start_render()
+        arcade.draw_lrwh_rectangle_textured(0, 0, self.width, self.height, self.background)
         arcade.draw_rectangle_outline(self.width//2, self.height//2,self.width-30, self.height-30,
                                       arcade.color.WHITE, border_width=10)
         arcade.draw_line(self.width//2, 30, self.width//2, self.height-30,
@@ -24,6 +25,7 @@ class Game(arcade.Window):
         self.ball.draw()
         arcade.draw_text(f'{self.player1.name} SCORE: {self.player1.score}', 100, 450, arcade.color.ALABAMA_CRIMSON, 15, 2,'left',('calibri', 'arial'), True)
         arcade.draw_text(f'{self.player2.name} SCORE: {self.player2.score}', 500, 450, arcade.color.ALABAMA_CRIMSON, 15, 2,'left',('calibri', 'arial'), True)
+        
         arcade.finish_render
 
     def on_mouse_motion(self, x: int, y: int, dx: int, dy: int):
