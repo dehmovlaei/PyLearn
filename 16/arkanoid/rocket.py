@@ -1,33 +1,20 @@
 import arcade
 
 class Rocket(arcade.Sprite):
-    def __init__(self, x, y, c, n):
+    def __init__(self, game):
         super().__init__()
-        self.center_x = x
-        self. center_y = y
-        self.color = c
-        self.name = n
-        self.change_x = 0
+        self.center_x = game.width//2
+        self. center_y = 45
+        self.change_x 
         self.change_y = 0
         self.width = 10
         self.height = 60
         self.speed = 4
         self.score = 0
-    
-    def move(self, game):
-        if game.ball.center_x > game.width//2:
-            
-            if self.center_y > game.ball.center_y:
-                self.change_y = -1
-            if self.center_y < game.ball.center_y:
-                self.change_y = 1
-            self.center_y += self.change_y * self.speed
+        self.game_width = game.width
 
-            if self.center_y < 60:
-                self.center_y = 60
-            if self.center_y > game.height - 60:
-                self.center_y =  game.height - 60
-
-    def draw(self):
-        arcade.draw_rectangle_filled(self.center_x, self.center_y, self.width,
-                                     self.height, self.color)
+    def move(self):
+        if self.change_x == -1 and self.center_x > 0:
+            self.center_x -= self.speed
+        elif self.change_x == 1 and self.center_x < self.game_width:
+            self.center_x += self.speed
