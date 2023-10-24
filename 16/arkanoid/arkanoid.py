@@ -4,7 +4,7 @@ from ball import Ball
 class Game(arcade.Window):
     def __init__(self):
         super().__init__(width=500, height=700, title='arkanoid 🔵🔵🔵', center_window=True)
-        self.background = arcade.load_texture(':resources:images/backgrounds/abstract_1.jpg')
+        # self.background = arcade.load_texture(':resources:images/backgrounds/abstract_1.jpg')
         self.rocket = Rocket(self)
         self.sprite_list = arcade.SpriteList()
         self.ball = Ball(self)
@@ -14,11 +14,11 @@ class Game(arcade.Window):
 
     def on_draw(self):
         arcade.start_render()
-        arcade.draw_lrwh_rectangle_textured(0, 0, self.width, self.height, self.background)
+        # arcade.draw_lrwh_rectangle_textured(0, 0, self.width, self.height, self.background)
         self.rocket.draw()
         # self.blocks.draw()
         self.ball.draw()
-        arcade.draw_text(f'SCORE: {self.rocket.score}', 100, 450, arcade.color.ALABAMA_CRIMSON, 15, 2,'left',('calibri', 'arial'), True)
+        arcade.draw_text(f'SCORE: {self.rocket.score}', 5, 680, arcade.color.ALABAMA_CRIMSON, 15, 2,'left',('calibri', 'arial'), True)
                
         arcade.finish_render
 

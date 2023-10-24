@@ -6,11 +6,11 @@ class Ball(arcade.Sprite):
         super().__init__()
         self.center_x = game.width//2
         self.center_y = game.height//2
-        self.color = arcade.color.GRAY_ASPARAGUS
-        self.radius = 5
+        self.color = arcade.color.WENGE
+        self.radius = 10
         self.change_x = random.choice([-1, 1])
         self.change_y = random.choice([-1, 1])
-        self.speed = 5
+        self.speed = 4
         self.width = self.radius * 2
         self.height = self.radius * 2
 
