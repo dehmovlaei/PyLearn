@@ -1,22 +1,30 @@
 import arcade
 from rocket import Rocket
 from ball import Ball
+from block import Block
 class Game(arcade.Window):
     def __init__(self):
         super().__init__(width=600, height=800, title='arkanoid 🔵🔵🔵', center_window=True)
-        # self.background = arcade.load_texture(':resources:images/backgrounds/abstract_1.jpg')
+        self.background = arcade.load_texture(':resources:images/backgrounds/abstract_1.jpg')
         self.rocket = Rocket(self)
         self.sprite_list = arcade.SpriteList()
         self.ball = Ball(self)
-
-        # self.sprite_list.append(self.blocks)
-        
+        self.x = 30
+        self.y = 600
+        self.color = arcade.color.AMERICAN_ROSE
 
     def on_draw(self):
         arcade.start_render()
-        # arcade.draw_lrwh_rectangle_textured(0, 0, self.width, self.height, self.background)
+
+        for i in range(5):
+            for j in range(10):
+                self.blocks = Block(self.x, self.y, self.color)
+                self.blocks.draw()
+                self.x += 60                
+        self.y += 25
+        
+        arcade.draw_lrwh_rectangle_textured(0, 0, self.width, self.height, self.background)
         self.rocket.draw()
-        # self.blocks.draw()
         self.ball.draw()
         arcade.draw_text(f'SCORE: {self.rocket.score}', 5, 780, arcade.color.AMERICAN_ROSE, 15, 2,'left',('calibri', 'calibri'), True)
                

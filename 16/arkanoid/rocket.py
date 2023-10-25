@@ -7,8 +7,8 @@ class Rocket(arcade.Sprite):
         self. center_y = 45
         self.change_x 
         self.change_y = 0
-        self.width = 170
-        self.height = 60
+        self.width = 150
+        self.height = 40
         self.speed = 4
         self.score = 0
         self.angle = 360
