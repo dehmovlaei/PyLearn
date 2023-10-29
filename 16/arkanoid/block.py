@@ -5,7 +5,7 @@ class Block(arcade.Sprite):
         super().__init__()
         self.center_x = x
         self.center_y = y
-        self.width = 60
+        self.width = 50
         self.height = 25
         self.color = c
 

@@ -9,21 +9,25 @@ class Game(arcade.Window):
         self.rocket = Rocket(self)
         self.sprite_list = arcade.SpriteList()
         self.ball = Ball(self)
-        self.x = 30
+        self.blocks = []
+        self.x = 25
         self.y = 600
         self.color = arcade.color.AMERICAN_ROSE
 
+        for i in range(5):
+            for j in range(11):
+                self.block = Block(self.x, self.y, self.color)
+                self.blocks.append(self.block)
+                self.x += 55                
+            self.y += 35
+
     def on_draw(self):
         arcade.start_render()
-
-        for i in range(5):
-            for j in range(10):
-                self.blocks = Block(self.x, self.y, self.color)
-                self.blocks.draw()
-                self.x += 60                
-        self.y += 25
-        
         arcade.draw_lrwh_rectangle_textured(0, 0, self.width, self.height, self.background)
+
+        for block in self.blocks:
+            block.draw()
+        
         self.rocket.draw()
         self.ball.draw()
         arcade.draw_text(f'SCORE: {self.rocket.score}', 5, 780, arcade.color.AMERICAN_ROSE, 15, 2,'left',('calibri', 'calibri'), True)
