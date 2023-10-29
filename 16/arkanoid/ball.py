@@ -10,7 +10,7 @@ class Ball(arcade.Sprite):
         self.radius = 10
         self.change_x = random.choice([-1, 1])
         self.change_y = random.choice([-1, 1])
-        self.speed = 6
+        self.speed = 4
         self.width = self.radius * 2
         self.height = self.radius * 2
 
