@@ -12,14 +12,17 @@ class Game(arcade.Window):
         self.blocks = []
         self.x = 25
         self.y = 600
-        self.color = arcade.color.AMERICAN_ROSE
+        self.color = [arcade.color.AMERICAN_ROSE, arcade.color.AERO_BLUE, arcade.color.PURPLE,
+                        arcade.color.PINK, arcade.color.ARYLIDE_YELLOW
+                        ]
 
         for i in range(5):
             for j in range(11):
-                self.block = Block(self.x, self.y, self.color)
+                self.block = Block(self.x, self.y, self.color[i])
                 self.blocks.append(self.block)
                 self.x += 55                
             self.y += 35
+            self.x = 25
 
     def on_draw(self):
         arcade.start_render()
