@@ -68,6 +68,11 @@ class Game(arcade.Window):
         elif symbol == arcade.key.DOWN:
             self.rocket.change_x = 0
 
+    def on_mouse_motion(self, x: int, y: int, dx: int, dy: int):
+        
+        if self.rocket.width-75 < x < self.width-self.rocket.width+75:
+            self.rocket.center_x = x
+
     def on_update(self, delta_time: float):
         if self.life:
             self.ball.move()
