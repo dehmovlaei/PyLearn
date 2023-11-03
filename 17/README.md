@@ -4,5 +4,5 @@
 ---
 | File      | Description |
 | ----------- | ----------- |
-|XXX|a Mini Game on progress |
+|XXX|...MyMini Game on progress |
 ![concentric](GameOver.jpg)
