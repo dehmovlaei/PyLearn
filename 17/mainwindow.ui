@@ -141,7 +141,7 @@
    <widget class="QPushButton" name="btnSum">
     <property name="geometry">
      <rect>
-      <x>252</x>
+      <x>251</x>
       <y>342</y>
       <width>80</width>
       <height>60</height>
@@ -423,7 +423,7 @@ background-color: rgb(44, 44, 44)
     <property name="font">
      <font>
       <family>Calibri</family>
-      <pointsize>50</pointsize>
+      <pointsize>48</pointsize>
      </font>
     </property>
     <property name="autoFillBackground">
@@ -435,6 +435,9 @@ background-color: rgb(44, 44, 44)
 	border : 5px solid rgb(32, 32, 32)
 }
 </string>
+    </property>
+    <property name="maxLength">
+     <number>9</number>
     </property>
    </widget>
    <widget class="QPushButton" name="btnEqual">
@@ -601,7 +604,7 @@ background-color: rgb(71, 177, 232)
      </size>
     </property>
    </widget>
-   <widget class="QPushButton" name="btnSum_2">
+   <widget class="QPushButton" name="btnCot">
     <property name="geometry">
      <rect>
       <x>170</x>
@@ -765,11 +768,11 @@ background-color: rgb(44, 44, 44)
      </size>
     </property>
    </widget>
-   <widget class="QPushButton" name="btnSum_3">
+   <widget class="QPushButton" name="btnTan">
     <property name="geometry">
      <rect>
       <x>170</x>
-      <y>101</y>
+      <y>102</y>
       <width>80</width>
       <height>60</height>
      </rect>
@@ -929,7 +932,7 @@ background-color: rgb(44, 44, 44)
      </size>
     </property>
    </widget>
-   <widget class="QPushButton" name="btnSum_4">
+   <widget class="QPushButton" name="btnCos">
     <property name="geometry">
      <rect>
       <x>90</x>
@@ -1093,11 +1096,11 @@ background-color: rgb(44, 44, 44)
      </size>
     </property>
    </widget>
-   <widget class="QPushButton" name="btnSum_5">
+   <widget class="QPushButton" name="btnSin">
     <property name="geometry">
      <rect>
       <x>90</x>
-      <y>101</y>
+      <y>102</y>
       <width>80</width>
       <height>60</height>
      </rect>
@@ -1272,10 +1275,10 @@ background-color: rgb(44, 44, 44)
      <bool>false</bool>
     </property>
    </widget>
-   <widget class="QPushButton" name="btnSum_6">
+   <widget class="QPushButton" name="btnDiv">
     <property name="geometry">
      <rect>
-      <x>252</x>
+      <x>251</x>
       <y>162</y>
       <width>80</width>
       <height>60</height>
@@ -1436,10 +1439,10 @@ background-color: rgb(44, 44, 44)
      </size>
     </property>
    </widget>
-   <widget class="QPushButton" name="btnSum_7">
+   <widget class="QPushButton" name="btnMul">
     <property name="geometry">
      <rect>
-      <x>252</x>
+      <x>251</x>
       <y>222</y>
       <width>80</width>
       <height>60</height>
@@ -1600,10 +1603,10 @@ background-color: rgb(44, 44, 44)
      </size>
     </property>
    </widget>
-   <widget class="QPushButton" name="btnSum_8">
+   <widget class="QPushButton" name="btnSub">
     <property name="geometry">
      <rect>
-      <x>252</x>
+      <x>251</x>
       <y>282</y>
       <width>80</width>
       <height>60</height>
@@ -1764,7 +1767,7 @@ background-color: rgb(44, 44, 44)
      </size>
     </property>
    </widget>
-   <widget class="QPushButton" name="btnSum_9">
+   <widget class="QPushButton" name="btn0">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -1943,7 +1946,7 @@ background-color: rgb(90, 90, 90)
      <bool>false</bool>
     </property>
    </widget>
-   <widget class="QPushButton" name="btnSum_10">
+   <widget class="QPushButton" name="btnLog">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -2122,10 +2125,10 @@ background-color: rgb(44, 44, 44)
      <bool>false</bool>
     </property>
    </widget>
-   <widget class="QPushButton" name="btnSum_11">
+   <widget class="QPushButton" name="btnSqrt">
     <property name="geometry">
      <rect>
-      <x>252</x>
+      <x>251</x>
       <y>101</y>
       <width>80</width>
       <height>60</height>
@@ -2301,7 +2304,7 @@ background-color: rgb(44, 44, 44)
      <bool>false</bool>
     </property>
    </widget>
-   <widget class="QPushButton" name="btnSum_12">
+   <widget class="QPushButton" name="btnAc">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -2480,7 +2483,7 @@ background-color: rgb(254, 159, 11)
      <bool>false</bool>
     </property>
    </widget>
-   <widget class="QPushButton" name="btnSum_13">
+   <widget class="QPushButton" name="btn1">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -2659,7 +2662,7 @@ background-color: rgb(90, 90, 90)
      <bool>false</bool>
     </property>
    </widget>
-   <widget class="QPushButton" name="btnSum_14">
+   <widget class="QPushButton" name="btn2">
     <property name="geometry">
      <rect>
       <x>90</x>
@@ -2838,7 +2841,7 @@ background-color: rgb(90, 90, 90)
      <bool>false</bool>
     </property>
    </widget>
-   <widget class="QPushButton" name="btnSum_15">
+   <widget class="QPushButton" name="btn3">
     <property name="geometry">
      <rect>
       <x>170</x>
@@ -3017,7 +3020,7 @@ background-color: rgb(90, 90, 90)
      <bool>false</bool>
     </property>
    </widget>
-   <widget class="QPushButton" name="btnSum_16">
+   <widget class="QPushButton" name="btn4">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -3196,7 +3199,7 @@ background-color: rgb(90, 90, 90)
      <bool>false</bool>
     </property>
    </widget>
-   <widget class="QPushButton" name="btnSum_17">
+   <widget class="QPushButton" name="btn5">
     <property name="geometry">
      <rect>
       <x>90</x>
@@ -3375,7 +3378,7 @@ background-color: rgb(90, 90, 90)
      <bool>false</bool>
     </property>
    </widget>
-   <widget class="QPushButton" name="btnSum_18">
+   <widget class="QPushButton" name="btn6">
     <property name="geometry">
      <rect>
       <x>170</x>
@@ -3554,7 +3557,7 @@ background-color: rgb(90, 90, 90)
      <bool>false</bool>
     </property>
    </widget>
-   <widget class="QPushButton" name="btnSum_19">
+   <widget class="QPushButton" name="btn7">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -3733,7 +3736,7 @@ background-color: rgb(90, 90, 90)
      <bool>false</bool>
     </property>
    </widget>
-   <widget class="QPushButton" name="btnSum_20">
+   <widget class="QPushButton" name="btn8">
     <property name="geometry">
      <rect>
       <x>90</x>
@@ -3912,7 +3915,7 @@ background-color: rgb(90, 90, 90)
      <bool>false</bool>
     </property>
    </widget>
-   <widget class="QPushButton" name="btnSum_21">
+   <widget class="QPushButton" name="btn9">
     <property name="geometry">
      <rect>
       <x>170</x>
@@ -4091,7 +4094,7 @@ background-color: rgb(90, 90, 90)
      <bool>false</bool>
     </property>
    </widget>
-   <widget class="QPushButton" name="btnSum_22">
+   <widget class="QPushButton" name="btn00">
     <property name="geometry">
      <rect>
       <x>90</x>
@@ -4270,7 +4273,7 @@ background-color: rgb(90, 90, 90)
      <bool>false</bool>
     </property>
    </widget>
-   <widget class="QPushButton" name="btnSum_23">
+   <widget class="QPushButton" name="btnRND">
     <property name="geometry">
      <rect>
       <x>170</x>
@@ -4431,7 +4434,7 @@ background-color: rgb(90, 90, 90)
 }</string>
     </property>
     <property name="text">
-     <string>.</string>
+     <string>RND</string>
     </property>
     <property name="iconSize">
      <size>
