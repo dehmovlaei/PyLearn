@@ -1770,7 +1770,7 @@ background-color: rgb(44, 44, 44)
    <widget class="QPushButton" name="btn0">
     <property name="geometry">
      <rect>
-      <x>10</x>
+      <x>90</x>
       <y>402</y>
       <width>80</width>
       <height>60</height>
@@ -2107,7 +2107,7 @@ background-color: rgb(44, 44, 44)
 }</string>
     </property>
     <property name="text">
-     <string>Log</string>
+     <string>log</string>
     </property>
     <property name="iconSize">
      <size>
@@ -4094,10 +4094,10 @@ background-color: rgb(90, 90, 90)
      <bool>false</bool>
     </property>
    </widget>
-   <widget class="QPushButton" name="btn00">
+   <widget class="QPushButton" name="btnDot">
     <property name="geometry">
      <rect>
-      <x>90</x>
+      <x>170</x>
       <y>402</y>
       <width>80</width>
       <height>60</height>
@@ -4255,7 +4255,7 @@ background-color: rgb(90, 90, 90)
 }</string>
     </property>
     <property name="text">
-     <string>00</string>
+     <string>.</string>
     </property>
     <property name="iconSize">
      <size>
@@ -4276,7 +4276,7 @@ background-color: rgb(90, 90, 90)
    <widget class="QPushButton" name="btnRND">
     <property name="geometry">
      <rect>
-      <x>170</x>
+      <x>10</x>
       <y>402</y>
       <width>80</width>
       <height>60</height>
