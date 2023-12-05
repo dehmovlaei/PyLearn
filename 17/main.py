@@ -23,8 +23,7 @@ def result():
         c = a * float(b)
     elif operator == '/':
         c = a / float(b)
-    # elif operator == 'sqrt':
-    #     c = math.sqrt(a)
+
     print_result(c)
 def line_string(input):
     if input == '':
