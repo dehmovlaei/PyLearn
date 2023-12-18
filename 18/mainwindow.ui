@@ -1562,7 +1562,7 @@ background-color: rgb(31, 53, 64)
        <property name="geometry">
         <rect>
          <x>0</x>
-         <y>0</y>
+         <y>20</y>
          <width>111</width>
          <height>31</height>
         </rect>
@@ -1582,7 +1582,7 @@ background-color: rgb(31, 53, 64)
        <property name="geometry">
         <rect>
          <x>0</x>
-         <y>30</y>
+         <y>50</y>
          <width>111</width>
          <height>41</height>
         </rect>

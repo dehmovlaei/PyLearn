@@ -1,4 +1,5 @@
 import sys
+import random
 from functools import partial
 from PySide6.QtWidgets import QApplication, QMessageBox
 from PySide6.QtUiTools import QUiLoader
@@ -11,16 +12,23 @@ def check():
         msgBox.exec()
 def play(row, col):
     global player
+    global buttons
+    global cpu
     if player == 1 and buttons[row][col].text() == "":
         buttons[row][col].setText("X")
         player = 2
-    elif player == 2 and buttons[row][col].text() == "":
+    elif player == 2 and not cpu and buttons[row][col].text() == "":
+        buttons[row][col].setText("O")
+        buttons[row][col].setStyleSheet("color: rgb(241, 178, 55); background-color: rgb(31, 53, 64)")
+        player = 1
+    elif player == 2 and cpu and buttons[row][col].text() == "":
         buttons[row][col].setText("O")
         buttons[row][col].setStyleSheet("color: rgb(241, 178, 55); background-color: rgb(31, 53, 64)")
         player = 1
     check()
 
 player = 1
+cpu = True
 loader = QUiLoader()
 app = QApplication(sys.argv)
 ui = loader.load("mainWindow.ui")
