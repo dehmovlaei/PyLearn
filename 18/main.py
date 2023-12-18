@@ -10,6 +10,19 @@ def check():
         msgBox.setText(f"Player_{player} Has WIN This Turn")
         msgBox.setWindowTitle("Congratulations!")
         msgBox.exec()
+def play_cpu():
+    global player
+    global keepon
+    global count
+    row, col = random.randint(0, 2), random.randint(0, 2)
+    if buttons[row][col].text() == "":
+        buttons[row][col].setText("O")
+        buttons[row][col].setStyleSheet("color: rgb(241, 178, 55); background-color: rgb(31, 53, 64)")
+        player = 1
+        count += 1
+    elif keepon <= 9:
+        play_cpu()
+
 def play(row, col):
     global player
     global buttons
@@ -17,18 +30,20 @@ def play(row, col):
     if player == 1 and buttons[row][col].text() == "":
         buttons[row][col].setText("X")
         player = 2
+        keepon += 1
+        if cpu:
+            play_cpu()
     elif player == 2 and not cpu and buttons[row][col].text() == "":
         buttons[row][col].setText("O")
         buttons[row][col].setStyleSheet("color: rgb(241, 178, 55); background-color: rgb(31, 53, 64)")
         player = 1
-    elif player == 2 and cpu and buttons[row][col].text() == "":
-        buttons[row][col].setText("O")
-        buttons[row][col].setStyleSheet("color: rgb(241, 178, 55); background-color: rgb(31, 53, 64)")
-        player = 1
+        keepon += 1
     check()
 
 player = 1
 cpu = True
+keepon = 0
+
 loader = QUiLoader()
 app = QApplication(sys.argv)
 ui = loader.load("mainWindow.ui")
