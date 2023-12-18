@@ -2,7 +2,7 @@
 ## train some course and solved assignments
 
 ---
-| File | Description |
-|------|-------------|
-| ...  | ...         |
-![concentric](../18/18.png)
+| File      | Description                            |
+|-----------|----------------------------------------|
+| TicTacToe | simple Tic Tac Toe Designed by PySide6 |
+![concentric](../18/TicTacToe.png)
