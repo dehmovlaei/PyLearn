@@ -217,7 +217,7 @@
       <property name="font">
        <font>
         <family>Comic Sans MS</family>
-        <pointsize>72</pointsize>
+        <pointsize>60</pointsize>
         <bold>true</bold>
        </font>
       </property>
@@ -366,7 +366,7 @@ background-color: rgb(31, 53, 64)
       <property name="font">
        <font>
         <family>Comic Sans MS</family>
-        <pointsize>72</pointsize>
+        <pointsize>60</pointsize>
         <bold>true</bold>
        </font>
       </property>
@@ -512,7 +512,7 @@ background-color: rgb(31, 53, 64)
       <property name="font">
        <font>
         <family>Comic Sans MS</family>
-        <pointsize>72</pointsize>
+        <pointsize>60</pointsize>
         <bold>true</bold>
        </font>
       </property>
@@ -658,7 +658,7 @@ background-color: rgb(31, 53, 64)
       <property name="font">
        <font>
         <family>Comic Sans MS</family>
-        <pointsize>72</pointsize>
+        <pointsize>60</pointsize>
         <bold>true</bold>
        </font>
       </property>
@@ -804,7 +804,7 @@ background-color: rgb(31, 53, 64)
       <property name="font">
        <font>
         <family>Comic Sans MS</family>
-        <pointsize>72</pointsize>
+        <pointsize>60</pointsize>
         <bold>true</bold>
        </font>
       </property>
@@ -950,7 +950,7 @@ background-color: rgb(31, 53, 64)
       <property name="font">
        <font>
         <family>Comic Sans MS</family>
-        <pointsize>72</pointsize>
+        <pointsize>60</pointsize>
         <bold>true</bold>
        </font>
       </property>
@@ -1096,7 +1096,7 @@ background-color: rgb(31, 53, 64)
       <property name="font">
        <font>
         <family>Comic Sans MS</family>
-        <pointsize>72</pointsize>
+        <pointsize>60</pointsize>
         <bold>true</bold>
        </font>
       </property>
@@ -1242,7 +1242,7 @@ background-color: rgb(31, 53, 64)
       <property name="font">
        <font>
         <family>Comic Sans MS</family>
-        <pointsize>72</pointsize>
+        <pointsize>60</pointsize>
         <bold>true</bold>
        </font>
       </property>
@@ -1388,7 +1388,7 @@ background-color: rgb(31, 53, 64)
       <property name="font">
        <font>
         <family>Comic Sans MS</family>
-        <pointsize>72</pointsize>
+        <pointsize>60</pointsize>
         <bold>true</bold>
        </font>
       </property>
@@ -1534,7 +1534,7 @@ background-color: rgb(31, 53, 64)
       <property name="font">
        <font>
         <family>Comic Sans MS</family>
-        <pointsize>72</pointsize>
+        <pointsize>60</pointsize>
         <bold>true</bold>
        </font>
       </property>
@@ -1680,7 +1680,7 @@ background-color: rgb(31, 53, 64)
       <property name="font">
        <font>
         <family>Comic Sans MS</family>
-        <pointsize>72</pointsize>
+        <pointsize>60</pointsize>
         <bold>true</bold>
        </font>
       </property>
@@ -1826,7 +1826,7 @@ background-color: rgb(31, 53, 64)
       <property name="font">
        <font>
         <family>Comic Sans MS</family>
-        <pointsize>72</pointsize>
+        <pointsize>60</pointsize>
         <bold>true</bold>
        </font>
       </property>
@@ -1972,7 +1972,7 @@ background-color: rgb(31, 53, 64)
       <property name="font">
        <font>
         <family>Comic Sans MS</family>
-        <pointsize>72</pointsize>
+        <pointsize>60</pointsize>
         <bold>true</bold>
        </font>
       </property>
@@ -2118,7 +2118,7 @@ background-color: rgb(31, 53, 64)
       <property name="font">
        <font>
         <family>Comic Sans MS</family>
-        <pointsize>72</pointsize>
+        <pointsize>60</pointsize>
         <bold>true</bold>
        </font>
       </property>
@@ -2264,7 +2264,7 @@ background-color: rgb(31, 53, 64)
       <property name="font">
        <font>
         <family>Comic Sans MS</family>
-        <pointsize>72</pointsize>
+        <pointsize>60</pointsize>
         <bold>true</bold>
        </font>
       </property>
@@ -2410,7 +2410,7 @@ background-color: rgb(31, 53, 64)
       <property name="font">
        <font>
         <family>Comic Sans MS</family>
-        <pointsize>72</pointsize>
+        <pointsize>60</pointsize>
         <bold>true</bold>
        </font>
       </property>

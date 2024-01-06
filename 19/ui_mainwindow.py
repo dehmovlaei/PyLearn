@@ -72,7 +72,7 @@ class Ui_MainWindow(object):
         self.btn_01.setPalette(palette1)
         font = QFont()
         font.setFamilies([u"Comic Sans MS"])
-        font.setPointSize(72)
+        font.setPointSize(60)
         font.setBold(True)
         self.btn_01.setFont(font)
         self.btn_01.setFocusPolicy(Qt.StrongFocus)
