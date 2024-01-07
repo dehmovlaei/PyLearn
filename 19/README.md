@@ -4,5 +4,5 @@
 ---
 | File      | Description                            |
 |-----------|----------------------------------------|
-| TicTacToe | simple Tic Tac Toe Designed by PySide6 |
-![concentric](../18/TicTacToe.png)
+| 15 Puzzle | simple  15 Puzzle Designed by PySide6 |
+![concentric](../19/15_Puzzle.png)
