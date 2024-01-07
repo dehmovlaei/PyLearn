@@ -10,10 +10,9 @@ class MainWindow(QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
 
-        self.ui.btn_2.clicked.connect(partial(self.line_break_remove))
-        self.ui.btn_1.clicked.connect(partial(self.try_again))
 
-    def line_break_remove(self):
+
+    def generate(self):
         py_string = ""
         self.ui.textEdit_1.setText(py_string)
 

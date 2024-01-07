@@ -76,16 +76,41 @@ class Ui_MainWindow(object):
 
         self.rbtn_2 = QRadioButton(self.centralwidget)
         self.rbtn_2.setObjectName(u"rbtn_2")
+        palette1 = QPalette()
+        brush2 = QBrush(QColor(220, 162, 50, 255))
+        brush2.setStyle(Qt.SolidPattern)
+        palette1.setBrush(QPalette.Active, QPalette.WindowText, brush2)
+        palette1.setBrush(QPalette.Inactive, QPalette.WindowText, brush2)
+        self.rbtn_2.setPalette(palette1)
+        font2 = QFont()
+        font2.setFamilies([u"Comic Sans MS"])
+        font2.setPointSize(14)
+        font2.setBold(True)
+        self.rbtn_2.setFont(font2)
 
         self.gridLayout.addWidget(self.rbtn_2, 3, 1, 1, 1)
 
         self.rbtn_1 = QRadioButton(self.centralwidget)
         self.rbtn_1.setObjectName(u"rbtn_1")
+        palette2 = QPalette()
+        palette2.setBrush(QPalette.Active, QPalette.WindowText, brush2)
+        brush3 = QBrush(QColor(0, 0, 0, 255))
+        brush3.setStyle(Qt.SolidPattern)
+        palette2.setBrush(QPalette.Active, QPalette.Text, brush3)
+        palette2.setBrush(QPalette.Inactive, QPalette.WindowText, brush2)
+        palette2.setBrush(QPalette.Inactive, QPalette.Text, brush3)
+        self.rbtn_1.setPalette(palette2)
+        self.rbtn_1.setFont(font2)
 
         self.gridLayout.addWidget(self.rbtn_1, 2, 1, 1, 1)
 
         self.rbtn_3 = QRadioButton(self.centralwidget)
         self.rbtn_3.setObjectName(u"rbtn_3")
+        palette3 = QPalette()
+        palette3.setBrush(QPalette.Active, QPalette.WindowText, brush2)
+        palette3.setBrush(QPalette.Inactive, QPalette.WindowText, brush2)
+        self.rbtn_3.setPalette(palette3)
+        self.rbtn_3.setFont(font2)
 
         self.gridLayout.addWidget(self.rbtn_3, 4, 1, 1, 1)
 
@@ -99,8 +124,8 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"dehmovlaei", None))
         self.btn_1.setText(QCoreApplication.translate("MainWindow", u"Generate", None))
-        self.rbtn_2.setText(QCoreApplication.translate("MainWindow", u"RadioButton", None))
-        self.rbtn_1.setText(QCoreApplication.translate("MainWindow", u"RadioButton", None))
-        self.rbtn_3.setText(QCoreApplication.translate("MainWindow", u"RadioButton", None))
+        self.rbtn_2.setText(QCoreApplication.translate("MainWindow", u"Strong Password", None))
+        self.rbtn_1.setText(QCoreApplication.translate("MainWindow", u"Normal Password", None))
+        self.rbtn_3.setText(QCoreApplication.translate("MainWindow", u"Expert Password", None))
     # retranslateUi
 
