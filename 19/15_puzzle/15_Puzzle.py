@@ -39,7 +39,7 @@ class MainWindow(QMainWindow):
         if self.check_win() == True:
             msgBox = QMessageBox()
             msgBox.setText("YOU WIN ❤️")
-            msgBox.exec_()
+            msgBox.exec()
 
     def check_win(self):
         index = 1
