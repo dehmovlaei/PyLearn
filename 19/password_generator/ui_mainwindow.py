@@ -47,7 +47,7 @@ class Ui_MainWindow(object):
         self.textEdit_1 = QTextEdit(self.centralwidget)
         self.textEdit_1.setObjectName(u"textEdit_1")
         font = QFont()
-        font.setFamilies([u"Comic Sans MS"])
+        font.setFamilies([u"Tahoma"])
         font.setPointSize(18)
         font.setBold(True)
         self.textEdit_1.setFont(font)

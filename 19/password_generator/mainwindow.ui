@@ -89,7 +89,7 @@
      <widget class="QTextEdit" name="textEdit_1">
       <property name="font">
        <font>
-        <family>Comic Sans MS</family>
+        <family>Tahoma</family>
         <pointsize>18</pointsize>
         <bold>true</bold>
        </font>
