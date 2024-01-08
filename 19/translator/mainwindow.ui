@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>349</width>
+    <height>713</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="palette">
+   <palette>
+    <active>
+     <colorrole role="ButtonText">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>242</red>
+        <green>178</green>
+        <blue>55</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Window">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>25</red>
+        <green>42</green>
+        <blue>50</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </active>
+    <inactive>
+     <colorrole role="ButtonText">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>242</red>
+        <green>178</green>
+        <blue>55</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Window">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>25</red>
+        <green>42</green>
+        <blue>50</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </inactive>
+    <disabled>
+     <colorrole role="Base">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>25</red>
+        <green>42</green>
+        <blue>50</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Window">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>25</red>
+        <green>42</green>
+        <blue>50</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </disabled>
+   </palette>
+  </property>
+  <property name="windowTitle">
+   <string>dehmovlaei</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QFormLayout" name="formLayout">
+    <item row="0" column="0" colspan="2">
+     <widget class="QTextEdit" name="textEdit_1">
+      <property name="font">
+       <font>
+        <family>Comic Sans MS</family>
+        <pointsize>12</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0" colspan="2">
+     <widget class="QTextEdit" name="textEdit_2">
+      <property name="font">
+       <font>
+        <family>Comic Sans MS</family>
+        <pointsize>12</pointsize>
+        <bold>false</bold>
+       </font>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QPushButton" name="btn_1">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>111</horstretch>
+        <verstretch>111</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>111</width>
+        <height>111</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>333</width>
+        <height>333</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>Comic Sans MS</family>
+        <pointsize>16</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+background-color:rgb(49, 196, 190)
+}</string>
+      </property>
+      <property name="text">
+       <string>New</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QPushButton" name="btn_2">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>111</horstretch>
+        <verstretch>111</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>111</width>
+        <height>111</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>333</width>
+        <height>333</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>Comic Sans MS</family>
+        <pointsize>16</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+background-color: rgb(242, 178, 55)
+}</string>
+      </property>
+      <property name="text">
+       <string>Translate</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="QPushButton" name="btn_4">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>111</horstretch>
+        <verstretch>111</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>111</width>
+        <height>111</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>333</width>
+        <height>333</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>Comic Sans MS</family>
+        <pointsize>16</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+background-color:rgb(49, 196, 190)
+}</string>
+      </property>
+      <property name="text">
+       <string>Exit</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QPushButton" name="btn_3">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>111</horstretch>
+        <verstretch>111</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>111</width>
+        <height>111</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>333</width>
+        <height>333</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>Comic Sans MS</family>
+        <pointsize>16</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+background-color: rgb(242, 178, 55)
+}</string>
+      </property>
+      <property name="text">
+       <string>Add Word</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="0">
+     <widget class="QRadioButton" name="rbtn_2">
+      <property name="palette">
+       <palette>
+        <active>
+         <colorrole role="WindowText">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>220</red>
+            <green>162</green>
+            <blue>50</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </active>
+        <inactive>
+         <colorrole role="WindowText">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>220</red>
+            <green>162</green>
+            <blue>50</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </inactive>
+        <disabled/>
+       </palette>
+      </property>
+      <property name="font">
+       <font>
+        <family>Comic Sans MS</family>
+        <pointsize>14</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Fa &gt; En</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="1">
+     <widget class="QRadioButton" name="rbtn_1">
+      <property name="palette">
+       <palette>
+        <active>
+         <colorrole role="WindowText">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>220</red>
+            <green>162</green>
+            <blue>50</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Text">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>0</red>
+            <green>0</green>
+            <blue>0</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </active>
+        <inactive>
+         <colorrole role="WindowText">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>220</red>
+            <green>162</green>
+            <blue>50</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Text">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>0</red>
+            <green>0</green>
+            <blue>0</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </inactive>
+        <disabled/>
+       </palette>
+      </property>
+      <property name="font">
+       <font>
+        <family>Comic Sans MS</family>
+        <pointsize>14</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>En &gt; Fa</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
