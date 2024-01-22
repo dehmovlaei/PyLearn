@@ -2,13 +2,10 @@
 ## train some course and solved assignments
 
 ---
-| File                                                                     | Description                                           |
-|--------------------------------------------------------------------------|-------------------------------------------------------|
-| 15 Puzzle                                                                | simple  15 Puzzle Designed by PySide6                 |
-| ![concentric](../19/15_puzzle/15_Puzzle.png)                             |
-| line break removal tool                                                  | simple App for remove break lines Designed by PySide6 |
-| ![concentric](../19/line_break_removal_tool/line_break_removal_tool.png) |
-| Password Generator                                                       | simple password generator Designed by PySide6         |
-| ![concentric](../19/password_generator/password_generator.png)           |
-| Translator                                                               | simple Translator Designed by PySide6                 |
-| ![concentric](../19/translator/translate.png)                            |
+| File                                           | Description                                                                                                                |
+|------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------|
+| Palam Polum Pilish                             | In this game, which is played with more than 3 people, the players choose the winner by showing the position of their hand |
+| ![concentric](../20/etc/ppp_game/triple_p.png) | Play non-stop as long as the app is open and check scores instantly                                                        |
+| marriage                                       | Random marriage between girls and boys, following the law of monogamy                                                      |
+| symmetric array                                | Determines whether an array of numbers is symmetric or not                                                                 |
+| database                                       | Designing a very simple database                                                                                           |
