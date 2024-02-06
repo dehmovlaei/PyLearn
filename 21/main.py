@@ -39,23 +39,25 @@ class Store:
 
     def remove(self):
         id = input("Enter movie id  ")
-        cur.execute(f"DELETE FROM medias WHERE id = '{id}'")
+        cur.execute(f"DELETE FROM medias WHERE id='{id}'")
         con.commit()
         print("successfully deleted...")
         self.show_list()
 
-    # def search(search_value):
-    #     for obj in MEDIA_LIST:
-    #         if (obj.name == search_value):
-    #             print(f'type: {obj.type}\nname: {obj.name}\nDirector: {obj.director}\nImdb_score: {obj.imdb_score}\nUrl: {obj.url}\nDuration: {obj.duration}\ncasts: {obj.casts}\n========================================================\n')
-    #     else:
-    #         print('Media not found...!')
+    def search(self):
+        t1 = input("Enter minimum duration of movie ")
+        t2 = input("Enter maximum duration of movie ")
+        result = cur.execute(f"SELECT * FROM medias WHERE duration>'{t1}' and duration<'{t2}'")
+        medias = result.fetchall()
+        for media in medias:
+            print(media)
 
 store = Store()
 store.load_database()
-print('WELCOME TO MOVIE STORE')
+
 while True:
     print('========================================================')
+    print('WELCOME TO MOVIE STORE')
     store.show_menu()
     user_select = int(input('HOW CAN I HELP YOU?\n'))
     print('========================================================')
@@ -68,7 +70,7 @@ while True:
         case 3:
             store.remove()
         case 4:
-            ...
+            store.search()
         case 5:
             store.show_list()
         case 6:
