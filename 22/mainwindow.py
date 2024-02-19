@@ -15,9 +15,9 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QGridLayout, QHBoxLayout, QLabel,
-    QLayout, QLineEdit, QMainWindow, QPushButton,
-    QSizePolicy, QWidget)
+from PySide6.QtWidgets import (QApplication, QGridLayout, QLabel, QLayout,
+    QLineEdit, QMainWindow, QPushButton, QSizePolicy,
+    QTextEdit, QVBoxLayout, QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -81,30 +81,40 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addLayout(self.gl_tasks, 1, 0, 1, 1)
 
-        self.gl_push = QHBoxLayout()
-        self.gl_push.setSpacing(10)
-        self.gl_push.setObjectName(u"gl_push")
-        self.gl_push.setSizeConstraint(QLayout.SetDefaultConstraint)
-        self.gl_push.setContentsMargins(-1, 0, 0, 0)
-        self.txt_new_task = QLineEdit(self.centralwidget)
-        self.txt_new_task.setObjectName(u"txt_new_task")
-        sizePolicy1.setHeightForWidth(self.txt_new_task.sizePolicy().hasHeightForWidth())
-        self.txt_new_task.setSizePolicy(sizePolicy1)
-        self.txt_new_task.setMinimumSize(QSize(350, 35))
-        self.txt_new_task.setMaximumSize(QSize(350, 35))
+        self.verticalLayout = QVBoxLayout()
+        self.verticalLayout.setSpacing(10)
+        self.verticalLayout.setObjectName(u"verticalLayout")
+        self.verticalLayout.setSizeConstraint(QLayout.SetDefaultConstraint)
+        self.verticalLayout.setContentsMargins(-1, 0, 0, 0)
+        self.tb_title = QLineEdit(self.centralwidget)
+        self.tb_title.setObjectName(u"tb_title")
+        sizePolicy2 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
+        sizePolicy2.setHorizontalStretch(0)
+        sizePolicy2.setVerticalStretch(0)
+        sizePolicy2.setHeightForWidth(self.tb_title.sizePolicy().hasHeightForWidth())
+        self.tb_title.setSizePolicy(sizePolicy2)
+        self.tb_title.setMinimumSize(QSize(0, 0))
+        self.tb_title.setMaximumSize(QSize(16777215, 16777215))
         font1 = QFont()
         font1.setPointSize(14)
         font1.setBold(True)
-        self.txt_new_task.setFont(font1)
+        self.tb_title.setFont(font1)
+        self.tb_title.setLayoutDirection(Qt.RightToLeft)
 
-        self.gl_push.addWidget(self.txt_new_task)
+        self.verticalLayout.addWidget(self.tb_title)
+
+        self.tb_description = QTextEdit(self.centralwidget)
+        self.tb_description.setObjectName(u"tb_description")
+        self.tb_description.setLayoutDirection(Qt.RightToLeft)
+
+        self.verticalLayout.addWidget(self.tb_description)
 
         self.btn_new_task = QPushButton(self.centralwidget)
         self.btn_new_task.setObjectName(u"btn_new_task")
-        sizePolicy1.setHeightForWidth(self.btn_new_task.sizePolicy().hasHeightForWidth())
-        self.btn_new_task.setSizePolicy(sizePolicy1)
-        self.btn_new_task.setMinimumSize(QSize(65, 45))
-        self.btn_new_task.setMaximumSize(QSize(65, 45))
+        sizePolicy2.setHeightForWidth(self.btn_new_task.sizePolicy().hasHeightForWidth())
+        self.btn_new_task.setSizePolicy(sizePolicy2)
+        self.btn_new_task.setMinimumSize(QSize(85, 45))
+        self.btn_new_task.setMaximumSize(QSize(85, 45))
         palette2 = QPalette()
         brush4 = QBrush(QColor(242, 178, 55, 255))
         brush4.setStyle(Qt.SolidPattern)
@@ -127,6 +137,7 @@ class Ui_MainWindow(object):
         font2.setPointSize(20)
         font2.setBold(True)
         self.btn_new_task.setFont(font2)
+        self.btn_new_task.setMouseTracking(False)
         self.btn_new_task.setStyleSheet(u"QPushButton{\n"
 "background-color: rgb(242, 178, 55)\n"
 "}\n"
@@ -134,10 +145,10 @@ class Ui_MainWindow(object):
 "border-radius: 15px\n"
 "}")
 
-        self.gl_push.addWidget(self.btn_new_task)
+        self.verticalLayout.addWidget(self.btn_new_task)
 
 
-        self.gridLayout.addLayout(self.gl_push, 2, 0, 1, 1)
+        self.gridLayout.addLayout(self.verticalLayout, 2, 0, 1, 1)
 
         MainWindow.setCentralWidget(self.centralwidget)
 
