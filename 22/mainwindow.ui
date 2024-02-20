@@ -651,14 +651,14 @@
         </property>
         <property name="minimumSize">
          <size>
-          <width>85</width>
-          <height>55</height>
+          <width>75</width>
+          <height>75</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>85</width>
-          <height>55</height>
+          <width>75</width>
+          <height>75</height>
          </size>
         </property>
         <property name="palette">

@@ -1,4 +1,6 @@
 import sys
+
+from PySide6.QtGui import QIcon
 from PySide6.QtWidgets import *
 from mainwindow import Ui_MainWindow
 from PySide6.QtCore import Qt
@@ -60,9 +62,9 @@ class MainWindow(QMainWindow):
                 imp_value = 0
             new_chb.clicked.connect(partial(self.check_task, tasks[i][0], imp_value))
             new_btn = QPushButton()
-            new_btn.setStyleSheet('image: url(":/22/bin.png");border:none;')
-            new_btn.setMaximumHeight(10)
-            new_btn.setMaximumWidth(10)
+            new_btn.setIcon(QIcon("bin.png"))
+            new_btn.setMaximumHeight(25)
+            new_btn.setMaximumWidth(25)
             new_btn.clicked.connect(partial(self.del_task, tasks[i][0]))
 
             self.ui.gl_tasks.addWidget(new_chb, i, 3)
