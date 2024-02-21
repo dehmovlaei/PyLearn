@@ -47,11 +47,11 @@ class MainWindow(QMainWindow):
             new_lbl_1 = QLabel()
             new_lbl_1.setText(tasks[i][1])
             new_lbl_1.setFont("Adobe Arabic")
-            new_lbl_1.setStyleSheet("font-weight:bold; font-size:22px; color:rgb(49, 196, 190)")
+            new_lbl_1.setStyleSheet("font-weight:bold; font-size:22px; color:rgb(255, 255, 255)")
             new_lbl_1.mousePressEvent = partial(self.show_description, tasks, i)
             # detect and color important tasks
             if tasks[i][4] == 2:
-                new_lbl_1.setStyleSheet("font-weight:bold; font-size:22px; color:rgb(255, 0, 85)")
+                new_lbl_1.setStyleSheet("font-weight:bold; font-size:20px; color:rgb(255, 85, 111)")
             new_chb = QCheckBox()
             # detect and show done tasks
             if tasks[i][5] == 2:
@@ -66,7 +66,7 @@ class MainWindow(QMainWindow):
             new_btn.setMaximumHeight(25)
             new_btn.setMaximumWidth(25)
             new_btn.clicked.connect(partial(self.del_task, tasks[i][0]))
-
+            # add elements to layout
             self.ui.gl_tasks.addWidget(new_chb, i, 3)
             self.ui.gl_tasks.addWidget(new_lbl_1, i, 2)
             self.ui.gl_tasks.addWidget(new_btn, i, 4)
@@ -88,10 +88,10 @@ class MainWindow(QMainWindow):
         new_lbl_2.setText(tasks[i][2])
         new_lbl_3.setText(tasks[i][3])
         new_lbl_2.setFont("Adobe Arabic")
-        new_lbl_2.setStyleSheet("font-weight:bold; font-size:22px; color:rgb(49, 196, 190)")
+        new_lbl_2.setStyleSheet("font-weight:bold; font-size:20px; color:rgb(255, 255, 255)")
         new_lbl_3.setFont("Adobe Arabic")
         if tasks[i][4] == 2:
-            new_lbl_2.setStyleSheet("font-weight:bold; font-size:22px; color:rgb(255, 0, 85)")
+            new_lbl_2.setStyleSheet("font-weight:bold; font-size:20px; color:rgb(255, 85, 111)")
         self.ui.gl_tasks.addWidget(new_lbl_2, i, 1)
         self.ui.gl_tasks.addWidget(new_lbl_3, i, 0)
 

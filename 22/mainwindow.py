@@ -23,7 +23,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(359, 592)
+        MainWindow.resize(303, 407)
         sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -57,6 +57,11 @@ class Ui_MainWindow(object):
         self.centralwidget.setObjectName(u"centralwidget")
         self.gridLayout = QGridLayout(self.centralwidget)
         self.gridLayout.setObjectName(u"gridLayout")
+        self.gl_tasks = QGridLayout()
+        self.gl_tasks.setObjectName(u"gl_tasks")
+
+        self.gridLayout.addLayout(self.gl_tasks, 1, 0, 1, 1)
+
         self.label_8 = QLabel(self.centralwidget)
         self.label_8.setObjectName(u"label_8")
         sizePolicy1 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
@@ -81,11 +86,6 @@ class Ui_MainWindow(object):
         self.label_8.setLayoutDirection(Qt.RightToLeft)
 
         self.gridLayout.addWidget(self.label_8, 0, 0, 1, 1)
-
-        self.gl_tasks = QGridLayout()
-        self.gl_tasks.setObjectName(u"gl_tasks")
-
-        self.gridLayout.addLayout(self.gl_tasks, 1, 0, 1, 1)
 
         self.verticalLayout = QVBoxLayout()
         self.verticalLayout.setSpacing(10)
@@ -192,19 +192,17 @@ class Ui_MainWindow(object):
         self.btn_new_task.setEnabled(True)
         sizePolicy2.setHeightForWidth(self.btn_new_task.sizePolicy().hasHeightForWidth())
         self.btn_new_task.setSizePolicy(sizePolicy2)
-        self.btn_new_task.setMinimumSize(QSize(75, 75))
-        self.btn_new_task.setMaximumSize(QSize(75, 75))
+        self.btn_new_task.setMinimumSize(QSize(55, 55))
+        self.btn_new_task.setMaximumSize(QSize(55, 55))
         palette5 = QPalette()
         brush4 = QBrush(QColor(49, 196, 190, 255))
         brush4.setStyle(Qt.SolidPattern)
         palette5.setBrush(QPalette.Active, QPalette.Button, brush4)
-        brush5 = QBrush(QColor(242, 178, 55, 255))
-        brush5.setStyle(Qt.SolidPattern)
-        palette5.setBrush(QPalette.Active, QPalette.ButtonText, brush5)
+        palette5.setBrush(QPalette.Active, QPalette.ButtonText, brush3)
         palette5.setBrush(QPalette.Active, QPalette.Base, brush4)
         palette5.setBrush(QPalette.Active, QPalette.Window, brush4)
         palette5.setBrush(QPalette.Inactive, QPalette.Button, brush4)
-        palette5.setBrush(QPalette.Inactive, QPalette.ButtonText, brush5)
+        palette5.setBrush(QPalette.Inactive, QPalette.ButtonText, brush3)
         palette5.setBrush(QPalette.Inactive, QPalette.Base, brush4)
         palette5.setBrush(QPalette.Inactive, QPalette.Window, brush4)
         palette5.setBrush(QPalette.Disabled, QPalette.Button, brush4)
@@ -251,6 +249,6 @@ class Ui_MainWindow(object):
         self.label_9.setText(QCoreApplication.translate("MainWindow", u"\u0639\u0646\u0648\u0627\u0646", None))
         self.label_10.setText(QCoreApplication.translate("MainWindow", u"\u062a\u0627\u0631\u06cc\u062e \u0648 \u0633\u0627\u0639\u062a", None))
         self.label_11.setText(QCoreApplication.translate("MainWindow", u"\u0634\u0631\u062d", None))
-        self.ch_important.setText(QCoreApplication.translate("MainWindow", u"\u0627\u0648\u0644\u0648\u06cc\u062a \u0628\u0627\u0644\u0627\u06cc\u06cc \u062f\u0627\u0631\u062f \u0628\u0627 \u0631\u0646\u06af \u0642\u0631\u0645\u0632 \u0646\u0645\u0627\u06cc\u0634 \u062f\u0627\u062f\u0647 \u0634\u0648\u062f", None))
+        self.ch_important.setText(QCoreApplication.translate("MainWindow", u"\u062a\u0639\u06cc\u06cc\u0646 \u0627\u0648\u0644\u0648\u06cc\u062a \u0628\u0627\u0644\u0627", None))
     # retranslateUi
 

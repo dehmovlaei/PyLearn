@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>359</width>
-    <height>592</height>
+    <width>303</width>
+    <height>407</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -127,6 +127,9 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
+    <item row="1" column="0">
+     <layout class="QGridLayout" name="gl_tasks"/>
+    </item>
     <item row="0" column="0">
      <widget class="QLabel" name="label_8">
       <property name="sizePolicy">
@@ -222,9 +225,6 @@
        <string>لیست کارها</string>
       </property>
      </widget>
-    </item>
-    <item row="1" column="0">
-     <layout class="QGridLayout" name="gl_tasks"/>
     </item>
     <item row="2" column="0">
      <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0,0,0,0,0,0,0">
@@ -634,7 +634,7 @@
          <enum>Qt::RightToLeft</enum>
         </property>
         <property name="text">
-         <string>اولویت بالایی دارد با رنگ قرمز نمایش داده شود</string>
+         <string>تعیین اولویت بالا</string>
         </property>
        </widget>
       </item>
@@ -651,14 +651,14 @@
         </property>
         <property name="minimumSize">
          <size>
-          <width>75</width>
-          <height>75</height>
+          <width>55</width>
+          <height>55</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>75</width>
-          <height>75</height>
+          <width>55</width>
+          <height>55</height>
          </size>
         </property>
         <property name="palette">
@@ -676,9 +676,9 @@
            <colorrole role="ButtonText">
             <brush brushstyle="SolidPattern">
              <color alpha="255">
-              <red>242</red>
-              <green>178</green>
-              <blue>55</blue>
+              <red>25</red>
+              <green>42</green>
+              <blue>50</blue>
              </color>
             </brush>
            </colorrole>
@@ -714,9 +714,9 @@
            <colorrole role="ButtonText">
             <brush brushstyle="SolidPattern">
              <color alpha="255">
-              <red>242</red>
-              <green>178</green>
-              <blue>55</blue>
+              <red>25</red>
+              <green>42</green>
+              <blue>50</blue>
              </color>
             </brush>
            </colorrole>
