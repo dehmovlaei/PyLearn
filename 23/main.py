@@ -33,8 +33,12 @@ class MainWindow(QMainWindow):
                     self.line_edits[i][j].setText("")
 
     def open_file(self):
-        x = QFileDialog.getOpenFileName(self, 'Open file', './', '')
-
+        file_path = QFileDialog.getOpenFileName(self, 'Open file', './', '')
+        f = open(file_path, "r")
+        big_text = f.read()
+        rows = big_text.split("\n")
+        for row in rows:
+            
     def validation(self, i, j, text):
         if text not in ["1", "2", "3", "4", "5", "6", "7", "8", "9"]:
             self.line_edits[i][j].setText("")
