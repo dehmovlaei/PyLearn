@@ -26,6 +26,7 @@ class MainWindow(QMainWindow):
         puzzle = Sudoku(3, seed=random.randint(1, 1000)).difficulty(0.5)
         for i in range(9):
             for j in range(9):
+                self.line_edits[i][j].setReadOnly(False)
                 if puzzle.board[i][j] is not None:
                     self.line_edits[i][j].setText(str(puzzle.board[i][j]))
                     self.line_edits[i][j].setReadOnly(True)
@@ -33,11 +34,29 @@ class MainWindow(QMainWindow):
                     self.line_edits[i][j].setText("")
 
     def open_file(self):
-        file_path = QFileDialog.getOpenFileName(self, 'Open file', './', '')
+        file_path = QFileDialog.getOpenFileName(self, 'Open file', './', '')[0]
+        print(file_path)
         f = open(file_path, "r")
         big_text = f.read()
         rows = big_text.split("\n")
-        for row in rows:
+        puzzle_board = [[None for _ in range(9)] for _ in range(9)]
+        for i in range(len(rows)):
+            print(len(rows))
+            cells = rows[i].split(" ")
+            for j in range(len(cells)):
+                puzzle_board[i][j] = int(cells[j])
+        for i in range(9):
+            for j in range(9):
+                self.line_edits[i][j].setReadOnly(False)
+                if puzzle_board[i][j] != 0:
+                    self.line_edits[i][j].setText(str(puzzle_board[i][j]))
+                    self.line_edits[i][j].setReadOnly(True)
+                else:
+                    self.line_edits[i][j].setText("")
+
+
+   def check():
+       ...
 
     def validation(self, i, j, text):
         if text not in ["1", "2", "3", "4", "5", "6", "7", "8", "9"]:
