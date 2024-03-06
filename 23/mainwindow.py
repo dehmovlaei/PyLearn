@@ -45,6 +45,14 @@ class Ui_MainWindow(object):
         self.menu_new.setObjectName(u"menu_new")
         self.menu_open = QAction(MainWindow)
         self.menu_open.setObjectName(u"menu_open")
+        self.menu_about = QAction(MainWindow)
+        self.menu_about.setObjectName(u"menu_about")
+        self.menu_exit = QAction(MainWindow)
+        self.menu_exit.setObjectName(u"menu_exit")
+        self.menu_solve = QAction(MainWindow)
+        self.menu_solve.setObjectName(u"menu_solve")
+        self.menu_help = QAction(MainWindow)
+        self.menu_help.setObjectName(u"menu_help")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.gridLayout = QGridLayout(self.centralwidget)
@@ -68,6 +76,10 @@ class Ui_MainWindow(object):
         self.menubar.addAction(self.menuFile.menuAction())
         self.menuFile.addAction(self.menu_new)
         self.menuFile.addAction(self.menu_open)
+        self.menuFile.addAction(self.menu_solve)
+        self.menuFile.addAction(self.menu_help)
+        self.menuFile.addAction(self.menu_about)
+        self.menuFile.addAction(self.menu_exit)
 
         self.retranslateUi(MainWindow)
 
@@ -78,6 +90,10 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"SUDOKU", None))
         self.menu_new.setText(QCoreApplication.translate("MainWindow", u"New...", None))
         self.menu_open.setText(QCoreApplication.translate("MainWindow", u"Open File", None))
+        self.menu_about.setText(QCoreApplication.translate("MainWindow", u"About", None))
+        self.menu_exit.setText(QCoreApplication.translate("MainWindow", u"Exit", None))
+        self.menu_solve.setText(QCoreApplication.translate("MainWindow", u"Solve sudoku", None))
+        self.menu_help.setText(QCoreApplication.translate("MainWindow", u"Help", None))
         self.menuFile.setTitle(QCoreApplication.translate("MainWindow", u"Game", None))
     # retranslateUi
 

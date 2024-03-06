@@ -15,6 +15,14 @@ class MainWindow(QMainWindow):
         self.ui.menu_new.triggered.connect(self.new_game)
         self.ui.menu_open.triggered.connect(self.open_file)
         self.line_edits = [[None for _ in range(9)] for _ in range(9)]
+        self.new_game()
+
+    def new_game(self):
+        layout = self.ui.grid_layout
+        for i in (range(layout.count())):
+            item = layout.itemAt(i)
+            widget = item.widget()
+            widget.deleteLater()
         for i in range(9):
             for j in range(9):
                 new_cell = QLineEdit()
@@ -27,9 +35,6 @@ class MainWindow(QMainWindow):
                 item_index = self.ui.grid_layout.indexOf(new_cell)
                 new_cell.textChanged.connect(partial(self.validation, i, j, item_index))
                 self.line_edits[i][j] = new_cell
-        self.new_game()
-
-    def new_game(self):
         puzzle = Sudoku(3, seed=random.randint(1, 1000)).difficulty(0.5)
         for i in range(9):
             for j in range(9):
@@ -76,56 +81,56 @@ class MainWindow(QMainWindow):
                 for j in range(3, 6):
                     number_2 = self.line_edits[i][j].text()
                     if number_1 == number_2 and number_1 != "" and i != row and j != col:
-                        print("✖️✖️✖️")
+                        self.ui.grid_layout.itemAt(item_index).widget().setStyleSheet("font-weight:bold; font-size:69px; color:rgb(255, 0, 0)")
         elif 0 <= row <= 2 and 6 <= col <= 8:
             number_1 = self.line_edits[row][col].text()
             for i in range(3):
                 for j in range(6, 9):
                     number_2 = self.line_edits[i][j].text()
                     if number_1 == number_2 and number_1 != "" and i != row and j != col:
-                        print("✖️✖️✖️")
+                        self.ui.grid_layout.itemAt(item_index).widget().setStyleSheet("font-weight:bold; font-size:69px; color:rgb(255, 0, 0)")
         elif 3 <= row <= 5 and 0 <= col <= 2:
             number_1 = self.line_edits[row][col].text()
             for i in range(3, 6):
                 for j in range(3):
                     number_2 = self.line_edits[i][j].text()
                     if number_1 == number_2 and number_1 != "" and i != row and j != col:
-                        print("✖️✖️✖️")
+                        self.ui.grid_layout.itemAt(item_index).widget().setStyleSheet("font-weight:bold; font-size:69px; color:rgb(255, 0, 0)")
         elif 3 <= row <= 5 and 3 <= col <= 5:
             number_1 = self.line_edits[row][col].text()
             for i in range(3, 6):
                 for j in range(3, 6):
                     number_2 = self.line_edits[i][j].text()
                     if number_1 == number_2 and number_1 != "" and i != row and j != col:
-                        print("✖️✖️✖️")
+                        self.ui.grid_layout.itemAt(item_index).widget().setStyleSheet("font-weight:bold; font-size:69px; color:rgb(255, 0, 0)")
         elif 3 <= row <= 5 and 6 <= col <= 8:
             number_1 = self.line_edits[row][col].text()
             for i in range(3, 6):
                 for j in range(6, 9):
                     number_2 = self.line_edits[i][j].text()
                     if number_1 == number_2 and number_1 != "" and i != row and j != col:
-                        print("✖️✖️✖️")
+                        self.ui.grid_layout.itemAt(item_index).widget().setStyleSheet("font-weight:bold; font-size:69px; color:rgb(255, 0, 0)")
         elif 6 <= row <= 8 and 0 <= col <= 2:
             number_1 = self.line_edits[row][col].text()
             for i in range(6, 9):
                 for j in range(3):
                     number_2 = self.line_edits[i][j].text()
                     if number_1 == number_2 and number_1 != "" and i != row and j != col:
-                        print("✖️✖️✖️")
+                        self.ui.grid_layout.itemAt(item_index).widget().setStyleSheet("font-weight:bold; font-size:69px; color:rgb(255, 0, 0)")
         elif 6 <= row <= 8 and 3 <= col<= 5:
             number_1 = self.line_edits[row][col].text()
             for i in range(6, 9):
                 for j in range(3, 6):
                     number_2 = self.line_edits[i][j].text()
                     if number_1 == number_2 and number_1 != "" and i != row and j != col:
-                        print("✖️✖️✖️")
+                        self.ui.grid_layout.itemAt(item_index).widget().setStyleSheet("font-weight:bold; font-size:69px; color:rgb(255, 0, 0)")
         elif 6 <= row <= 8 and 6 <= col <= 8:
             number_1 = self.line_edits[row][col].text()
             for i in range(6, 9):
                 for j in range(6, 9):
                     number_2 = self.line_edits[i][j].text()
                     if number_1 == number_2 and number_1 != "" and i != row and j != col:
-                        print("✖️✖️✖️")
+                        self.ui.grid_layout.itemAt(item_index).widget().setStyleSheet("font-weight:bold; font-size:69px; color:rgb(255, 0, 0)")
 
         for i in range(0, 9):
             for j in range(0, 9):
@@ -133,7 +138,7 @@ class MainWindow(QMainWindow):
                 for k in range(1, 9):
                     number_2 = self.line_edits[i][k].text()
                     if number_1 == number_2 and number_1 != "" and j != k:
-                        print("✖️")
+                        self.ui.grid_layout.itemAt(item_index).widget().setStyleSheet("font-weight:bold; font-size:69px; color:rgb(255, 0, 0)")
                         return False
         for j in range(0, 9):
             for i in range(0, 9):
@@ -141,7 +146,7 @@ class MainWindow(QMainWindow):
                 for k in range(1, 9):
                     number_2 = self.line_edits[k][j].text()
                     if number_1 == number_2 and number_1 != "" and i != k:
-                        print("✖️")
+                        self.ui.grid_layout.itemAt(item_index).widget().setStyleSheet("font-weight:bold; font-size:69px; color:rgb(255, 0, 0)")
                         return False
 
 
