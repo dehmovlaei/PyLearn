@@ -16,7 +16,7 @@ def help_func():
 
 
 def exit_func():
-    exit()
+    sys.exit()
 
 
 def about():
@@ -30,15 +30,18 @@ class MainWindow(QMainWindow):
         super().__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+        self.win_flag = True
+        self.dark_flag = False
+        self.light_flag = True
         self.ui.menu_new.triggered.connect(self.new_game)
         self.ui.menu_open.triggered.connect(self.open_file)
         self.ui.menu_solve.triggered.connect(self.show_solve)
         self.ui.menu_help.triggered.connect(help_func)
         self.ui.menu_about.triggered.connect(about)
         self.ui.menu_exit.triggered.connect(exit_func)
+        self.ui.menu_theme.triggered.connect(self.switch_theme)
         self.line_edits = [[None for _ in range(9)] for _ in range(9)]
         self.user_input = [[False for _ in range(9)] for _ in range(9)]
-        self.win_flag = True
         self.solve = self.new_game()
 
     def new_game(self):
@@ -78,13 +81,11 @@ class MainWindow(QMainWindow):
     def open_file(self):
         try:
             file_path = QFileDialog.getOpenFileName(self, 'Open file', './', '')[0]
-            print(file_path)
             f = open(file_path, "r")
             big_text = f.read()
             rows = big_text.split("\n")
             puzzle_board = [[None for _ in range(9)] for _ in range(9)]
             for i in range(len(rows)):
-                print(len(rows))
                 cells = rows[i].split(" ")
                 for j in range(len(cells)):
                     puzzle_board[i][j] = int(cells[j])
@@ -94,6 +95,7 @@ class MainWindow(QMainWindow):
                     if puzzle_board[i][j] != 0:
                         self.line_edits[i][j].setText(str(puzzle_board[i][j]))
                         self.line_edits[i][j].setReadOnly(True)
+                        self.user_input[i][j] = True
                     else:
                         self.line_edits[i][j].setText("")
             return True
@@ -104,6 +106,50 @@ class MainWindow(QMainWindow):
         msgBox = QMessageBox()
         msgBox.setText(f"{self.solve}")
         msgBox.exec()
+
+    def switch_theme(self):
+        if self.light_flag:
+            self.dark_mode()
+        else:
+            self.light_mode()
+
+    def dark_mode(self):
+        self.dark_flag = True
+        self.light_flag = False
+        index = 0
+        for i in range(9):
+            for j in range(9):
+                self.ui.grid_layout.itemAt(index).widget().setStyleSheet(
+                    "background-color:rgb(0, 0, 0); font-weight:bold; font-size:69px; color:rgb(255, 255, 255)")
+                if not self.user_input[i][j]:
+                    self.ui.grid_layout.itemAt(index).widget().setStyleSheet(
+                        "background-color:rgb(0, 0, 0); font-weight:bold; font-size:69px; color:rgb(255, 0, 0)")
+                index += 1
+
+    def light_mode(self):
+        self.light_flag = True
+        self.dark_flag = False
+        index = 0
+        for i in range(9):
+            for j in range(9):
+                self.ui.grid_layout.itemAt(index).widget().setStyleSheet(
+                    "background-color:rgb(255, 255, 255); font-weight:bold; font-size:69px; color:rgb(25, 42, 50)")
+                if not self.user_input[i][j]:
+                    self.ui.grid_layout.itemAt(index).widget().setStyleSheet(
+                        "background-color:rgb(255, 255, 255); font-weight:bold; font-size:69px; color:rgb(255, 0, 0)")
+                index += 1
+    def validation(self, i, j, item_index, text):
+        if text not in ["1", "2", "3", "4", "5", "6", "7", "8", "9"]:
+            self.line_edits[i][j].setText("")
+        self.check(i, j, item_index)
+        if self.light_flag:
+            self.light_mode()
+        else:
+            self.dark_mode()
+        if self.win_check():
+            msgBox = QMessageBox()
+            msgBox.setText("YOU WIN ❤️")
+            msgBox.exec()
 
     def check(self, row, col, item_index):
         self.win_flag = True
@@ -209,17 +255,8 @@ class MainWindow(QMainWindow):
                         self.win_flag = False
         if self.win_flag:
             self.user_input[row][col] = True
-
-    def validation(self, i, j, item_index, text):
-        if text not in ["1", "2", "3", "4", "5", "6", "7", "8", "9"]:
-            self.line_edits[i][j].setText("")
-        self.ui.grid_layout.itemAt(item_index).widget().setStyleSheet(
-            "font-weight:bold; font-size:69px; color:rgb(25, 42, 50)")
-        self.check(i, j, item_index)
-        if self.win_check():
-            msgBox = QMessageBox()
-            msgBox.setText("YOU WIN ❤️")
-            msgBox.exec()
+        else:
+            self.user_input[row][col] = False
 
     def win_check(self):
         for i in range(9):

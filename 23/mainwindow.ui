@@ -106,6 +106,7 @@
     <addaction name="menu_new"/>
     <addaction name="menu_open"/>
     <addaction name="menu_solve"/>
+    <addaction name="menu_theme"/>
     <addaction name="menu_help"/>
     <addaction name="menu_about"/>
     <addaction name="menu_exit"/>
@@ -141,6 +142,11 @@
   <action name="menu_help">
    <property name="text">
     <string>Help</string>
+   </property>
+  </action>
+  <action name="menu_theme">
+   <property name="text">
+    <string>Switch Theme</string>
    </property>
   </action>
  </widget>
