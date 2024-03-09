@@ -1,5 +1,5 @@
 c# PyLearn Assignments
-## train some course and solved assignments
+## train some course and solved assignments By AmirHossein Dehmovlaei
 
 ---
 | File                            | Description                                                                                                                                    |
