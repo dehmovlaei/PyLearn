@@ -36,12 +36,12 @@ class MainWindow(QMainWindow):
             self.buttons[i][j].setVisible(False)
             self.empty_i = i
             self.empty_j = j
-        if self.check_win() == True:
+        if self.win_check() == True:
             msgBox = QMessageBox()
             msgBox.setText("YOU WIN ❤️")
             msgBox.exec()
 
-    def check_win(self):
+    def win_check(self):
         index = 1
         for i in range(4):
             for j in range(4):
