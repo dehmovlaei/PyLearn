@@ -7,6 +7,24 @@ from PySide6.QtCore import *
 from mainwindow import Ui_MainWindow
 
 
+def help_func():
+    msgBox = QMessageBox()
+    msgBox.setText("Pay attention that there should not be duplicate numbers in any row or column, and also in "
+                   "any block of three, considering that this entire table is made by putting together 9 blocks "
+                   "of three.")
+    msgBox.exec()
+
+
+def exit_func():
+    exit()
+
+
+def about():
+    msgBox = QMessageBox()
+    msgBox.setText("First version of my SUDOKU designed by AmirHossein Dehmovlaei")
+    msgBox.exec()
+
+
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -15,6 +33,9 @@ class MainWindow(QMainWindow):
         self.ui.menu_new.triggered.connect(self.new_game)
         self.ui.menu_open.triggered.connect(self.open_file)
         self.ui.menu_solve.triggered.connect(self.show_solve)
+        self.ui.menu_help.triggered.connect(help_func)
+        self.ui.menu_about.triggered.connect(about)
+        self.ui.menu_exit.triggered.connect(exit_func)
         self.line_edits = [[None for _ in range(9)] for _ in range(9)]
         self.user_input = [[False for _ in range(9)] for _ in range(9)]
         self.win_flag = True
@@ -78,6 +99,7 @@ class MainWindow(QMainWindow):
             return True
         except:
             return False
+
     def show_solve(self):
         msgBox = QMessageBox()
         msgBox.setText(f"{self.solve}")
@@ -187,7 +209,6 @@ class MainWindow(QMainWindow):
                         self.win_flag = False
         if self.win_flag:
             self.user_input[row][col] = True
-
 
     def validation(self, i, j, item_index, text):
         if text not in ["1", "2", "3", "4", "5", "6", "7", "8", "9"]:
