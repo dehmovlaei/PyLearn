@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'mainwindow.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.6.1
+## Created by: Qt User Interface Compiler version 6.7.0
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -23,8 +23,8 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(303, 407)
-        sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
+        MainWindow.resize(320, 456)
+        sizePolicy = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(MainWindow.sizePolicy().hasHeightForWidth())
@@ -64,7 +64,7 @@ class Ui_MainWindow(object):
 
         self.label_8 = QLabel(self.centralwidget)
         self.label_8.setObjectName(u"label_8")
-        sizePolicy1 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
+        sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Fixed)
         sizePolicy1.setHorizontalStretch(0)
         sizePolicy1.setVerticalStretch(0)
         sizePolicy1.setHeightForWidth(self.label_8.sizePolicy().hasHeightForWidth())
@@ -83,14 +83,14 @@ class Ui_MainWindow(object):
         font1.setPointSize(16)
         font1.setBold(True)
         self.label_8.setFont(font1)
-        self.label_8.setLayoutDirection(Qt.RightToLeft)
+        self.label_8.setLayoutDirection(Qt.LayoutDirection.RightToLeft)
 
         self.gridLayout.addWidget(self.label_8, 0, 0, 1, 1)
 
         self.verticalLayout = QVBoxLayout()
         self.verticalLayout.setSpacing(10)
         self.verticalLayout.setObjectName(u"verticalLayout")
-        self.verticalLayout.setSizeConstraint(QLayout.SetDefaultConstraint)
+        self.verticalLayout.setSizeConstraint(QLayout.SizeConstraint.SetDefaultConstraint)
         self.verticalLayout.setContentsMargins(-1, 0, 0, 0)
         self.label_9 = QLabel(self.centralwidget)
         self.label_9.setObjectName(u"label_9")
@@ -106,13 +106,13 @@ class Ui_MainWindow(object):
         palette2.setBrush(QPalette.Disabled, QPalette.ToolTipText, brush)
         self.label_9.setPalette(palette2)
         self.label_9.setFont(font1)
-        self.label_9.setLayoutDirection(Qt.RightToLeft)
+        self.label_9.setLayoutDirection(Qt.LayoutDirection.RightToLeft)
 
         self.verticalLayout.addWidget(self.label_9)
 
         self.tb_title = QLineEdit(self.centralwidget)
         self.tb_title.setObjectName(u"tb_title")
-        sizePolicy2 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
+        sizePolicy2 = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
         sizePolicy2.setHorizontalStretch(0)
         sizePolicy2.setVerticalStretch(0)
         sizePolicy2.setHeightForWidth(self.tb_title.sizePolicy().hasHeightForWidth())
@@ -120,7 +120,7 @@ class Ui_MainWindow(object):
         self.tb_title.setMinimumSize(QSize(45, 0))
         self.tb_title.setMaximumSize(QSize(200, 45))
         self.tb_title.setFont(font1)
-        self.tb_title.setLayoutDirection(Qt.RightToLeft)
+        self.tb_title.setLayoutDirection(Qt.LayoutDirection.RightToLeft)
 
         self.verticalLayout.addWidget(self.tb_title)
 
@@ -138,7 +138,7 @@ class Ui_MainWindow(object):
         palette3.setBrush(QPalette.Disabled, QPalette.ToolTipText, brush)
         self.label_10.setPalette(palette3)
         self.label_10.setFont(font1)
-        self.label_10.setLayoutDirection(Qt.RightToLeft)
+        self.label_10.setLayoutDirection(Qt.LayoutDirection.RightToLeft)
 
         self.verticalLayout.addWidget(self.label_10)
 
@@ -149,7 +149,7 @@ class Ui_MainWindow(object):
         self.tb_date.setMinimumSize(QSize(45, 0))
         self.tb_date.setMaximumSize(QSize(200, 45))
         self.tb_date.setFont(font1)
-        self.tb_date.setLayoutDirection(Qt.RightToLeft)
+        self.tb_date.setLayoutDirection(Qt.LayoutDirection.RightToLeft)
 
         self.verticalLayout.addWidget(self.tb_date)
 
@@ -167,7 +167,7 @@ class Ui_MainWindow(object):
         palette4.setBrush(QPalette.Disabled, QPalette.ToolTipText, brush)
         self.label_11.setPalette(palette4)
         self.label_11.setFont(font1)
-        self.label_11.setLayoutDirection(Qt.RightToLeft)
+        self.label_11.setLayoutDirection(Qt.LayoutDirection.RightToLeft)
 
         self.verticalLayout.addWidget(self.label_11)
 
@@ -176,14 +176,14 @@ class Ui_MainWindow(object):
         self.tb_description.setMinimumSize(QSize(0, 0))
         self.tb_description.setMaximumSize(QSize(250, 100))
         self.tb_description.setFont(font1)
-        self.tb_description.setLayoutDirection(Qt.RightToLeft)
+        self.tb_description.setLayoutDirection(Qt.LayoutDirection.RightToLeft)
 
         self.verticalLayout.addWidget(self.tb_description)
 
         self.ch_important = QCheckBox(self.centralwidget)
         self.ch_important.setObjectName(u"ch_important")
         self.ch_important.setFont(font1)
-        self.ch_important.setLayoutDirection(Qt.RightToLeft)
+        self.ch_important.setLayoutDirection(Qt.LayoutDirection.RightToLeft)
 
         self.verticalLayout.addWidget(self.ch_important)
 
@@ -215,7 +215,7 @@ class Ui_MainWindow(object):
         font2.setBold(True)
         self.btn_new_task.setFont(font2)
         self.btn_new_task.setMouseTracking(False)
-        self.btn_new_task.setLayoutDirection(Qt.RightToLeft)
+        self.btn_new_task.setLayoutDirection(Qt.LayoutDirection.RightToLeft)
         self.btn_new_task.setAutoFillBackground(False)
         self.btn_new_task.setStyleSheet(u"QPushButton{\n"
 "background-color: rgb(49, 196, 190)\n"
