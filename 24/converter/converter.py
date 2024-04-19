@@ -25,4 +25,12 @@ for thread in threads:
     thread.join()
 
 end_time = time.time()
-print(end_time - start_time)
+print(f'{end_time - start_time}_on thread mod')
+
+start_time = time.time()
+
+for add, name in videos:
+    convert(add, name)
+
+end_time = time.time()
+print(f'{end_time - start_time}_on simple mod')
