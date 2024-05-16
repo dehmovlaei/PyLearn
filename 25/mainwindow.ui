@@ -1995,10 +1995,10 @@
      <widget class="QPushButton" name="btn_start_stopwatch">
       <property name="geometry">
        <rect>
-        <x>70</x>
+        <x>40</x>
         <y>180</y>
-        <width>151</width>
-        <height>71</height>
+        <width>131</width>
+        <height>51</height>
        </rect>
       </property>
       <property name="font">
@@ -2018,10 +2018,10 @@
      <widget class="QPushButton" name="btn_stop_stopwatch">
       <property name="geometry">
        <rect>
-        <x>240</x>
+        <x>170</x>
         <y>180</y>
-        <width>151</width>
-        <height>71</height>
+        <width>131</width>
+        <height>51</height>
        </rect>
       </property>
       <property name="font">
@@ -2036,6 +2036,29 @@
       </property>
       <property name="text">
        <string>Stop</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_reset_stopwatch">
+      <property name="geometry">
+       <rect>
+        <x>300</x>
+        <y>180</y>
+        <width>131</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Courier New</family>
+        <pointsize>28</pointsize>
+        <italic>false</italic>
+        <bold>true</bold>
+        <underline>false</underline>
+        <strikeout>false</strikeout>
+       </font>
+      </property>
+      <property name="text">
+       <string>Reset</string>
       </property>
      </widget>
     </widget>

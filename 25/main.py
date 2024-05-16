@@ -10,6 +10,14 @@ def start_stopwatch():
     thread_stopwatch.start()
 
 
+def stop_stopwatch():
+    thread_stopwatch.terminate()
+
+
+def reset_stopwatch():
+    main_window.window().ui.lbl_stopwatch.setText(str(0))
+    thread_stopwatch.rest()
+
 def get_counter(second):
     print(second)
     main_window.window().ui.lbl_stopwatch.setText(str(second))
@@ -21,7 +29,8 @@ class MainWindow(QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.ui.btn_start_stopwatch.clicked.connect(start_stopwatch)
-        # self.ui.lbl_stopwatch.setText(str(get_counter))
+        self.ui.btn_stop_stopwatch.clicked.connect(stop_stopwatch)
+        self.ui.btn_reset_stopwatch.clicked.connect(reset_stopwatch)
 
 
 class MyThread(QThread):
@@ -36,6 +45,9 @@ class MyThread(QThread):
             self.second += 1
             self.signal_counter.emit(self.second)
             time.sleep(1)
+
+    def rest(self):
+        self.second = 0
 
 
 app = QApplication(sys.argv)

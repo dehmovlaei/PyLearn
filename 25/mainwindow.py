@@ -393,7 +393,7 @@ class Ui_MainWindow(object):
         self.lbl_stopwatch.setAlignment(Qt.AlignCenter)
         self.btn_start_stopwatch = QPushButton(self.tab_4)
         self.btn_start_stopwatch.setObjectName(u"btn_start_stopwatch")
-        self.btn_start_stopwatch.setGeometry(QRect(70, 180, 151, 71))
+        self.btn_start_stopwatch.setGeometry(QRect(40, 180, 131, 51))
         font2 = QFont()
         font2.setFamilies([u"Courier New"])
         font2.setPointSize(28)
@@ -404,8 +404,12 @@ class Ui_MainWindow(object):
         self.btn_start_stopwatch.setFont(font2)
         self.btn_stop_stopwatch = QPushButton(self.tab_4)
         self.btn_stop_stopwatch.setObjectName(u"btn_stop_stopwatch")
-        self.btn_stop_stopwatch.setGeometry(QRect(240, 180, 151, 71))
+        self.btn_stop_stopwatch.setGeometry(QRect(170, 180, 131, 51))
         self.btn_stop_stopwatch.setFont(font2)
+        self.btn_reset_stopwatch = QPushButton(self.tab_4)
+        self.btn_reset_stopwatch.setObjectName(u"btn_reset_stopwatch")
+        self.btn_reset_stopwatch.setGeometry(QRect(300, 180, 131, 51))
+        self.btn_reset_stopwatch.setFont(font2)
         self.tabWidget.addTab(self.tab_4, "")
         MainWindow.setCentralWidget(self.centralwidget)
 
@@ -432,6 +436,7 @@ class Ui_MainWindow(object):
         self.lbl_stopwatch.setText(QCoreApplication.translate("MainWindow", u"0", None))
         self.btn_start_stopwatch.setText(QCoreApplication.translate("MainWindow", u"Start", None))
         self.btn_stop_stopwatch.setText(QCoreApplication.translate("MainWindow", u"Stop", None))
+        self.btn_reset_stopwatch.setText(QCoreApplication.translate("MainWindow", u"Reset", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_4), QCoreApplication.translate("MainWindow", u"Timer", None))
     # retranslateUi
 
