@@ -18,6 +18,7 @@ def reset_stopwatch():
     main_window.window().ui.lbl_stopwatch.setText(str(0))
     thread_stopwatch.rest()
 
+
 def get_counter(second):
     print(second)
     main_window.window().ui.lbl_stopwatch.setText(str(second))

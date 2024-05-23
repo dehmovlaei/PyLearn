@@ -975,9 +975,10 @@
     </property>
     <property name="font">
      <font>
-      <pointsize>11</pointsize>
+      <family>Pristina</family>
+      <pointsize>14</pointsize>
       <italic>false</italic>
-      <bold>true</bold>
+      <bold>false</bold>
       <underline>false</underline>
       <strikeout>false</strikeout>
      </font>
@@ -1977,13 +1978,16 @@
       </property>
       <property name="font">
        <font>
-        <family>Courier New</family>
+        <family>FS Sevegment</family>
         <pointsize>44</pointsize>
         <italic>false</italic>
-        <bold>true</bold>
+        <bold>false</bold>
         <underline>false</underline>
         <strikeout>false</strikeout>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 0, 127);</string>
       </property>
       <property name="text">
        <string>0</string>
@@ -1995,7 +1999,7 @@
      <widget class="QPushButton" name="btn_start_stopwatch">
       <property name="geometry">
        <rect>
-        <x>40</x>
+        <x>30</x>
         <y>180</y>
         <width>131</width>
         <height>51</height>
@@ -2003,13 +2007,18 @@
       </property>
       <property name="font">
        <font>
-        <family>Courier New</family>
-        <pointsize>28</pointsize>
+        <family>Digital-7</family>
+        <pointsize>22</pointsize>
         <italic>false</italic>
-        <bold>true</bold>
+        <bold>false</bold>
         <underline>false</underline>
         <strikeout>false</strikeout>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 170, 0);
+color: rgb(255, 255, 255);
+border-radius: 20px;</string>
       </property>
       <property name="text">
        <string>Start</string>
@@ -2026,13 +2035,18 @@
       </property>
       <property name="font">
        <font>
-        <family>Courier New</family>
-        <pointsize>28</pointsize>
+        <family>Digital-7</family>
+        <pointsize>22</pointsize>
         <italic>false</italic>
-        <bold>true</bold>
+        <bold>false</bold>
         <underline>false</underline>
         <strikeout>false</strikeout>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(85, 85, 127);
+color: rgb(255, 255, 255);
+border-radius: 20px;</string>
       </property>
       <property name="text">
        <string>Stop</string>
@@ -2041,7 +2055,7 @@
      <widget class="QPushButton" name="btn_reset_stopwatch">
       <property name="geometry">
        <rect>
-        <x>300</x>
+        <x>310</x>
         <y>180</y>
         <width>131</width>
         <height>51</height>
@@ -2049,13 +2063,18 @@
       </property>
       <property name="font">
        <font>
-        <family>Courier New</family>
-        <pointsize>28</pointsize>
+        <family>Digital-7</family>
+        <pointsize>22</pointsize>
         <italic>false</italic>
-        <bold>true</bold>
+        <bold>false</bold>
         <underline>false</underline>
         <strikeout>false</strikeout>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 85, 127);
+color: rgb(255, 255, 255);
+border-radius: 20px;</string>
       </property>
       <property name="text">
        <string>Reset</string>
