@@ -11,6 +11,10 @@ def start_stopwatch():
     thread_stopwatch.start()
 
 
+def start_timer():
+    thread_timer.start()
+
+
 def stop_stopwatch():
     thread_stopwatch.terminate()
 
@@ -20,9 +24,15 @@ def reset_stopwatch():
     thread_stopwatch.reset()
 
 
-def get_counter(time_sw):
-    print(f"{time_sw.hour}:{time_sw.minutes}:{time_sw.second}")
-    main_window.window().ui.lbl_stopwatch.setText(f"{time_sw.hour}:{time_sw.minutes}:{time_sw.second}")
+def show_time_stopwatch(time):
+    main_window.window().ui.lbl_stopwatch.setText(f"{time.hour}:{time.minutes}:{time.second}")
+
+
+def show_time_timer(time):
+    print(f"{time.hour}:{time.minutes}:{time.second}")
+    main_window.window().ui.tb_hour_timer.setText(str(time.hour))
+    main_window.window().ui.tb_minutes_timer.setText(str(time.minutes))
+    main_window.window().ui.tb_second_timer.setText(str(time.second))
 
 
 class MainWindow(QMainWindow):
@@ -31,27 +41,47 @@ class MainWindow(QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.ui.btn_start_stopwatch.clicked.connect(start_stopwatch)
+        self.ui.btn_start_timer.clicked.connect(start_timer)
         self.ui.btn_stop_stopwatch.clicked.connect(stop_stopwatch)
         self.ui.btn_reset_stopwatch.clicked.connect(reset_stopwatch)
 
 
-class MyThread(QThread):
+class TimerThread(QThread):
     signal_counter = Signal(MyTime)
 
     def __init__(self):
         super().__init__()
-        self.time_sw = MyTime(0, 0, 0)
+        self.time = MyTime(00, 15, 30)
 
     def run(self):
         while True:
-            self.time_sw.plus()
-            self.signal_counter.emit(self.time_sw)
+            self.time.minus()
+            self.signal_counter.emit(self.time)
             time.sleep(1)
 
     def reset(self):
-        self.time_sw.second = 0
-        self.time_sw.minutes = 0
-        self.time_sw.hour = 0
+        self.time.second = 0
+        self.time.minutes = 0
+        self.time.hour = 0
+
+
+class StopWatchMyThread(QThread):
+    signal_counter = Signal(MyTime)
+
+    def __init__(self):
+        super().__init__()
+        self.time = MyTime(0, 0, 0)
+
+    def run(self):
+        while True:
+            self.time.plus()
+            self.signal_counter.emit(self.time)
+            time.sleep(1)
+
+    def reset(self):
+        self.time.second = 0
+        self.time.minutes = 0
+        self.time.hour = 0
 
 
 if __name__ == "__main__":
@@ -59,6 +89,8 @@ if __name__ == "__main__":
     main_window = MainWindow()
     main_window.show()
     main_window.window().ui.lbl_stopwatch.setText("0:0:0")
-    thread_stopwatch = MyThread()
-    thread_stopwatch.signal_counter.connect(get_counter)
+    thread_stopwatch = StopWatchMyThread()
+    thread_timer = TimerThread()
+    thread_stopwatch.signal_counter.connect(show_time_stopwatch)
+    thread_timer.signal_counter.connect(show_time_timer)
     app.exec()

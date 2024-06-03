@@ -12,3 +12,6 @@ class MyTime:
         if self.minutes >= 60:
             self.hour += 1
             self.minutes -= 60
+
+    def minus(self):
+        self.second -= 1
