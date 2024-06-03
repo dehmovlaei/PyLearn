@@ -309,7 +309,7 @@ class Ui_MainWindow(object):
         self.tab_4.setAutoFillBackground(True)
         self.lbl_stopwatch = QLabel(self.tab_4)
         self.lbl_stopwatch.setObjectName(u"lbl_stopwatch")
-        self.lbl_stopwatch.setGeometry(QRect(160, 30, 141, 81))
+        self.lbl_stopwatch.setGeometry(QRect(40, 30, 381, 81))
         palette3 = QPalette()
         palette3.setBrush(QPalette.Active, QPalette.WindowText, brush)
         brush27 = QBrush(QColor(25, 42, 50, 255))

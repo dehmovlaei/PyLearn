@@ -4,6 +4,7 @@ from PySide6.QtWidgets import *
 from PySide6.QtGui import *
 from PySide6.QtCore import *
 from mainwindow import Ui_MainWindow
+from mytime import MyTime
 
 
 def start_stopwatch():
@@ -15,13 +16,13 @@ def stop_stopwatch():
 
 
 def reset_stopwatch():
-    main_window.window().ui.lbl_stopwatch.setText(str(0))
-    thread_stopwatch.rest()
+    main_window.window().ui.lbl_stopwatch.setText("0:0:0")
+    thread_stopwatch.reset()
 
 
-def get_counter(second):
-    print(second)
-    main_window.window().ui.lbl_stopwatch.setText(str(second))
+def get_counter(time_sw):
+    print(f"{time_sw.hour}:{time_sw.minutes}:{time_sw.second}")
+    main_window.window().ui.lbl_stopwatch.setText(f"{time_sw.hour}:{time_sw.minutes}:{time_sw.second}")
 
 
 class MainWindow(QMainWindow):
@@ -35,26 +36,29 @@ class MainWindow(QMainWindow):
 
 
 class MyThread(QThread):
-    signal_counter = Signal(int)
+    signal_counter = Signal(MyTime)
 
     def __init__(self):
         super().__init__()
-        self.second = 0
+        self.time_sw = MyTime(0, 0, 0)
 
     def run(self):
         while True:
-            self.second += 1
-            self.signal_counter.emit(self.second)
+            self.time_sw.plus()
+            self.signal_counter.emit(self.time_sw)
             time.sleep(1)
 
-    def rest(self):
-        self.second = 0
+    def reset(self):
+        self.time_sw.second = 0
+        self.time_sw.minutes = 0
+        self.time_sw.hour = 0
 
 
-app = QApplication(sys.argv)
-main_window = MainWindow()
-main_window.show()
-thread_stopwatch = MyThread()
-thread_stopwatch.signal_counter.connect(get_counter)
-
-app.exec()
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    main_window = MainWindow()
+    main_window.show()
+    main_window.window().ui.lbl_stopwatch.setText("0:0:0")
+    thread_stopwatch = MyThread()
+    thread_stopwatch.signal_counter.connect(get_counter)
+    app.exec()
