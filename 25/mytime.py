@@ -3,6 +3,7 @@ class MyTime:
         self.hour = h
         self.minute = m
         self.second = s
+        self.time_up = False
 
     def plus(self):
         self.second += 1
@@ -27,4 +28,5 @@ class MyTime:
                 self.second = 0
                 self.minute = 0
                 self.hour = 0
-                print("time up")
+                if not self.time_up:
+                    self.time_up = True

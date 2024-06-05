@@ -12,9 +12,10 @@ class TimerThread(QThread):
 
     def run(self):
         while True:
-            self.time.minus()
-            self.signal_counter.emit(self.time)
-            time.sleep(1)
+            if not self.time.time_up:
+                self.time.minus()
+                self.signal_counter.emit(self.time)
+                time.sleep(1)
 
     def reset(self):
         self.time.second = 0
