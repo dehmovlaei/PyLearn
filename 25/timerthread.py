@@ -8,7 +8,7 @@ class TimerThread(QThread):
 
     def __init__(self):
         super().__init__()
-        self.time = MyTime(00, 15, 30)
+        self.time = MyTime(0, 15, 30)
 
     def run(self):
         while True:
@@ -18,5 +18,5 @@ class TimerThread(QThread):
 
     def reset(self):
         self.time.second = 0
-        self.time.minutes = 0
+        self.time.minute = 0
         self.time.hour = 0

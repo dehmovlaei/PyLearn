@@ -993,7 +993,7 @@
      <number>3</number>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>2</number>
     </property>
     <property name="documentMode">
      <bool>true</bool>
@@ -1243,7 +1243,7 @@ border-radius: 20px;</string>
        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
       </property>
      </widget>
-     <widget class="QLineEdit" name="tb_minutes_timer">
+     <widget class="QLineEdit" name="tb_minute_timer">
       <property name="geometry">
        <rect>
         <x>196</x>

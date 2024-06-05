@@ -1,4 +1,5 @@
 import sys
+import time
 from PySide6.QtWidgets import *
 from PySide6.QtCore import *
 from mainwindow import Ui_MainWindow
@@ -13,6 +14,9 @@ def start_stopwatch():
 
 @Slot()
 def start_timer():
+    thread_timer.time.hour = int(main_window.ui.tb_hour_timer.text())
+    thread_timer.time.minute = int(main_window.ui.tb_minute_timer.text())
+    thread_timer.time.second = int(main_window.ui.tb_second_timer.text())
     thread_timer.start()
 
 
@@ -29,12 +33,13 @@ def reset_stopwatch():
 
 @Slot()
 def show_time_stopwatch(time):
-    main_window.window().ui.lbl_stopwatch.setText(f"{time.hour}:{time.minutes}:{time.second}")
+    main_window.window().ui.lbl_stopwatch.setText(f"{time.hour}:{time.minute}:{time.second}")
 
 
+@Slot()
 def show_time_timer(time):
     main_window.window().ui.tb_hour_timer.setText(str(time.hour))
-    main_window.window().ui.tb_minutes_timer.setText(str(time.minutes))
+    main_window.window().ui.tb_minute_timer.setText(str(time.minute))
     main_window.window().ui.tb_second_timer.setText(str(time.second))
 
 

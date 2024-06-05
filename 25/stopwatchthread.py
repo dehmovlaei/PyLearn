@@ -18,5 +18,5 @@ class StopWatchThread(QThread):
 
     def reset(self):
         self.time.second = 0
-        self.time.minutes = 0
+        self.time.minute = 0
         self.time.hour = 0
