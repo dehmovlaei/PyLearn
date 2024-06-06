@@ -1,6 +1,7 @@
 import sys
 from PySide6.QtWidgets import *
 from PySide6.QtCore import *
+from PySide6.QtGui import QFontDatabase, QFont
 from mainwindow import Ui_MainWindow
 from timerthread import TimerThread
 from stopwatchthread import StopWatchThread
@@ -10,14 +11,17 @@ from stopwatchthread import StopWatchThread
 def start_stopwatch():
     thread_stopwatch.start()
 
+
 @Slot()
 def stop_stopwatch():
     thread_stopwatch.terminate()
+
 
 @Slot()
 def reset_stopwatch():
     main_window.window().ui.lbl_stopwatch.setText("0:0:0")
     thread_stopwatch.reset()
+
 
 @Slot()
 def show_time_stopwatch(time):
@@ -31,9 +35,11 @@ def start_timer():
     thread_timer.time.second = int(main_window.ui.tb_second_timer.text())
     thread_timer.start()
 
+
 @Slot()
 def stop_timer():
     thread_timer.terminate()
+
 
 @Slot()
 def reset_timer():
@@ -69,10 +75,23 @@ class MainWindow(QMainWindow):
         self.ui.btn_stop_timer.clicked.connect(stop_timer)
         self.ui.btn_reset_timer.clicked.connect(reset_timer)
 
+
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     main_window = MainWindow()
     main_window.show()
+
+    fontId = QFontDatabase.addApplicationFont('../25/etc/fs-sevegment.ttf')
+    font_family = QFontDatabase.applicationFontFamilies(fontId)[0]
+    main_window.window().ui.lbl_stopwatch.setStyleSheet(f'font-family: {font_family};'
+                                                        f' font-size: 64px; color: rgb(255, 0, 127);')
+    main_window.window().ui.tb_hour_timer.setStyleSheet(f'font-family: {font_family};'
+                                                        f' font-size: 64px; color: rgb(255, 0, 127);')
+    main_window.window().ui.tb_minute_timer.setStyleSheet(f'font-family: {font_family};'
+                                                          f' font-size: 64px; color: rgb(255, 0, 127);')
+    main_window.window().ui.tb_second_timer.setStyleSheet(f'font-family: {font_family};'
+                                                          f' font-size: 64px; color: rgb(255, 0, 127);')
+
     main_window.window().ui.lbl_stopwatch.setText("0:0:0")
     thread_stopwatch = StopWatchThread()
     thread_timer = TimerThread()

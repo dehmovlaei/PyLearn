@@ -993,7 +993,7 @@
      <number>3</number>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>0</number>
     </property>
     <property name="documentMode">
      <bool>true</bool>
@@ -1108,10 +1108,10 @@ border-radius: 20px;</string>
      <widget class="QLineEdit" name="tb_hour_timer">
       <property name="geometry">
        <rect>
-        <x>115</x>
-        <y>30</y>
-        <width>81</width>
-        <height>71</height>
+        <x>87</x>
+        <y>31</y>
+        <width>101</width>
+        <height>91</height>
        </rect>
       </property>
       <property name="palette">
@@ -1226,7 +1226,7 @@ border-radius: 20px;</string>
       <property name="font">
        <font>
         <family>FS Sevegment</family>
-        <pointsize>40</pointsize>
+        <pointsize>48</pointsize>
         <italic>false</italic>
         <bold>false</bold>
         <underline>false</underline>
@@ -1240,16 +1240,16 @@ border-radius: 20px;</string>
        <string>00</string>
       </property>
       <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
      <widget class="QLineEdit" name="tb_minute_timer">
       <property name="geometry">
        <rect>
-        <x>196</x>
-        <y>30</y>
-        <width>81</width>
-        <height>71</height>
+        <x>188</x>
+        <y>31</y>
+        <width>101</width>
+        <height>91</height>
        </rect>
       </property>
       <property name="palette">
@@ -1364,7 +1364,7 @@ border-radius: 20px;</string>
       <property name="font">
        <font>
         <family>FS Sevegment</family>
-        <pointsize>40</pointsize>
+        <pointsize>48</pointsize>
         <italic>false</italic>
         <bold>false</bold>
         <underline>false</underline>
@@ -1378,16 +1378,16 @@ border-radius: 20px;</string>
        <string>15</string>
       </property>
       <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
      <widget class="QLineEdit" name="tb_second_timer">
       <property name="geometry">
        <rect>
-        <x>277</x>
-        <y>30</y>
-        <width>81</width>
-        <height>71</height>
+        <x>289</x>
+        <y>31</y>
+        <width>101</width>
+        <height>91</height>
        </rect>
       </property>
       <property name="palette">
@@ -1502,7 +1502,7 @@ border-radius: 20px;</string>
       <property name="font">
        <font>
         <family>FS Sevegment</family>
-        <pointsize>40</pointsize>
+        <pointsize>48</pointsize>
         <italic>false</italic>
         <bold>false</bold>
         <underline>false</underline>
@@ -1516,7 +1516,7 @@ border-radius: 20px;</string>
        <string>30</string>
       </property>
       <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
     </widget>
@@ -2002,8 +2002,8 @@ border-radius: 20px;</string>
      <widget class="QLabel" name="lbl_stopwatch">
       <property name="geometry">
        <rect>
-        <x>40</x>
-        <y>30</y>
+        <x>48</x>
+        <y>36</y>
         <width>381</width>
         <height>81</height>
        </rect>
@@ -2480,7 +2480,7 @@ border-radius: 20px;</string>
       <property name="font">
        <font>
         <family>FS Sevegment</family>
-        <pointsize>44</pointsize>
+        <pointsize>48</pointsize>
         <italic>false</italic>
         <bold>false</bold>
         <underline>false</underline>
@@ -2491,7 +2491,7 @@ border-radius: 20px;</string>
        <string notr="true">color: rgb(255, 0, 127);</string>
       </property>
       <property name="text">
-       <string>0</string>
+       <string>00</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
