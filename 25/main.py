@@ -5,6 +5,7 @@ from PySide6.QtGui import QFontDatabase, QFont
 from mainwindow import Ui_MainWindow
 from timerthread import TimerThread
 from stopwatchthread import StopWatchThread
+from worldclockthread import WorldClockThread
 
 
 @Slot()
@@ -62,6 +63,12 @@ def show_time_timer(time):
         notification.setText("Time UP")
         notification.exec()
 
+@Slot()
+def show_world_clock(time):
+    main_window.window().ui.lbl_clock_iran.setText(time.current_time[0])
+    main_window.window().ui.lbl_clock_germany.setText(time.current_time[1])
+    main_window.window().ui.lbl_clock_usa.setText(time.current_time[2])
+
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -84,17 +91,28 @@ if __name__ == "__main__":
     fontId = QFontDatabase.addApplicationFont('../25/etc/fs-sevegment.ttf')
     font_family = QFontDatabase.applicationFontFamilies(fontId)[0]
     main_window.window().ui.lbl_stopwatch.setStyleSheet(f'font-family: {font_family};'
-                                                        f' font-size: 64px; color: rgb(255, 0, 127);')
+                                                        f' font-size: 50px; color: rgb(255, 0, 127);')
     main_window.window().ui.tb_hour_timer.setStyleSheet(f'font-family: {font_family};'
-                                                        f' font-size: 64px; color: rgb(255, 0, 127);')
+                                                        f' font-size: 50px; color: rgb(255, 0, 127);')
     main_window.window().ui.tb_minute_timer.setStyleSheet(f'font-family: {font_family};'
-                                                          f' font-size: 64px; color: rgb(255, 0, 127);')
+                                                          f' font-size: 50px; color: rgb(255, 0, 127);')
     main_window.window().ui.tb_second_timer.setStyleSheet(f'font-family: {font_family};'
-                                                          f' font-size: 64px; color: rgb(255, 0, 127);')
+                                                          f' font-size: 50px; color: rgb(255, 0, 127);')
+    main_window.window().ui.lbl_clock_iran.setStyleSheet(f'font-family: {font_family};'
+                                                          f' font-size: 50px; color: rgb(255, 0, 127);')
+    main_window.window().ui.lbl_clock_germany.setStyleSheet(f'font-family: {font_family};'
+                                                          f' font-size: 50px; color: rgb(255, 0, 127);')
+    main_window.window().ui.lbl_clock_usa.setStyleSheet(f'font-family: {font_family};'
+                                                          f' font-size: 50px; color: rgb(255, 0, 127);')
+
 
     main_window.window().ui.lbl_stopwatch.setText("0:0:0")
     thread_stopwatch = StopWatchThread()
     thread_timer = TimerThread()
+    thread_world_clock = WorldClockThread()
+    thread_world_clock.start()
     thread_stopwatch.signal_counter.connect(show_time_stopwatch)
     thread_timer.signal_counter.connect(show_time_timer)
+    thread_world_clock.signal_counter.connect(show_world_clock)
+
     app.exec()
