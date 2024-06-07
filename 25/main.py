@@ -88,7 +88,7 @@ if __name__ == "__main__":
     main_window = MainWindow()
     main_window.show()
 
-    fontId = QFontDatabase.addApplicationFont('../25/etc/fs-sevegment.ttf')
+    fontId = QFontDatabase.addApplicationFont('../25/res/fs-sevegment.ttf')
     font_family = QFontDatabase.applicationFontFamilies(fontId)[0]
     main_window.window().ui.lbl_stopwatch.setStyleSheet(f'font-family: {font_family};'
                                                         f' font-size: 50px; color: rgb(255, 0, 127);')

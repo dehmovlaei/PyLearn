@@ -1015,7 +1015,7 @@
       <property name="geometry">
        <rect>
         <x>220</x>
-        <y>16</y>
+        <y>12</y>
         <width>261</width>
         <height>91</height>
        </rect>
@@ -1513,9 +1513,9 @@
       <property name="geometry">
        <rect>
         <x>220</x>
-        <y>112</y>
+        <y>110</y>
         <width>261</width>
-        <height>101</height>
+        <height>90</height>
        </rect>
       </property>
       <property name="palette">
@@ -2011,7 +2011,7 @@
       <property name="geometry">
        <rect>
         <x>220</x>
-        <y>207</y>
+        <y>200</y>
         <width>261</width>
         <height>111</height>
        </rect>
