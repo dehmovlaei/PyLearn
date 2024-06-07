@@ -966,7 +966,7 @@
      <number>3</number>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <property name="documentMode">
      <bool>true</bool>
@@ -1567,7 +1567,7 @@
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: rgb(255, 0, 127);</string>
+       <string notr="true">color: rgb(255, 170, 0);</string>
       </property>
       <property name="text">
        <string>88:88:88</string>
@@ -2065,7 +2065,7 @@
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: rgb(255, 0, 127);</string>
+       <string notr="true">color: rgb(255, 170, 0);</string>
       </property>
       <property name="text">
        <string>88:88:88</string>
@@ -2563,7 +2563,7 @@
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: rgb(255, 0, 127);</string>
+       <string notr="true">color: rgb(255, 170, 0);</string>
       </property>
       <property name="text">
        <string>88:88:88</string>
@@ -3053,7 +3053,7 @@
       <property name="font">
        <font>
         <family>Comic Sans MS</family>
-        <pointsize>24</pointsize>
+        <pointsize>36</pointsize>
         <italic>false</italic>
         <bold>true</bold>
         <underline>false</underline>
@@ -3061,7 +3061,7 @@
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: rgb(255, 170, 0)</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string>Tehran:</string>
@@ -3551,7 +3551,7 @@
       <property name="font">
        <font>
         <family>Comic Sans MS</family>
-        <pointsize>24</pointsize>
+        <pointsize>36</pointsize>
         <italic>false</italic>
         <bold>true</bold>
         <underline>false</underline>
@@ -3559,7 +3559,7 @@
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: rgb(255, 170, 0)</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string>Berlin:</string>
@@ -4049,7 +4049,7 @@
       <property name="font">
        <font>
         <family>Comic Sans MS</family>
-        <pointsize>24</pointsize>
+        <pointsize>33</pointsize>
         <italic>false</italic>
         <bold>true</bold>
         <underline>false</underline>
@@ -4057,7 +4057,7 @@
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color:rgb(255, 170, 0)</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string>NewYork:</string>
@@ -4069,7 +4069,7 @@
     </widget>
     <widget class="QWidget" name="tab_2">
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(45, 45, 45);</string>
+      <string notr="true">background-color: rgb(0, 0, 0);</string>
      </property>
      <attribute name="title">
       <string>Alarm</string>
@@ -4079,7 +4079,7 @@
        <rect>
         <x>9</x>
         <y>9</y>
-        <width>401</width>
+        <width>441</width>
         <height>281</height>
        </rect>
       </property>
@@ -4093,27 +4093,27 @@
         <colorrole role="Button">
          <brush brushstyle="SolidPattern">
           <color alpha="255">
-           <red>45</red>
-           <green>45</green>
-           <blue>45</blue>
+           <red>0</red>
+           <green>0</green>
+           <blue>0</blue>
           </color>
          </brush>
         </colorrole>
         <colorrole role="Base">
          <brush brushstyle="SolidPattern">
           <color alpha="255">
-           <red>45</red>
-           <green>45</green>
-           <blue>45</blue>
+           <red>0</red>
+           <green>0</green>
+           <blue>0</blue>
           </color>
          </brush>
         </colorrole>
         <colorrole role="Window">
          <brush brushstyle="SolidPattern">
           <color alpha="255">
-           <red>45</red>
-           <green>45</green>
-           <blue>45</blue>
+           <red>0</red>
+           <green>0</green>
+           <blue>0</blue>
           </color>
          </brush>
         </colorrole>
@@ -4122,27 +4122,27 @@
         <colorrole role="Button">
          <brush brushstyle="SolidPattern">
           <color alpha="255">
-           <red>45</red>
-           <green>45</green>
-           <blue>45</blue>
+           <red>0</red>
+           <green>0</green>
+           <blue>0</blue>
           </color>
          </brush>
         </colorrole>
         <colorrole role="Base">
          <brush brushstyle="SolidPattern">
           <color alpha="255">
-           <red>45</red>
-           <green>45</green>
-           <blue>45</blue>
+           <red>0</red>
+           <green>0</green>
+           <blue>0</blue>
           </color>
          </brush>
         </colorrole>
         <colorrole role="Window">
          <brush brushstyle="SolidPattern">
           <color alpha="255">
-           <red>45</red>
-           <green>45</green>
-           <blue>45</blue>
+           <red>0</red>
+           <green>0</green>
+           <blue>0</blue>
           </color>
          </brush>
         </colorrole>
@@ -4151,27 +4151,27 @@
         <colorrole role="Button">
          <brush brushstyle="SolidPattern">
           <color alpha="255">
-           <red>45</red>
-           <green>45</green>
-           <blue>45</blue>
+           <red>0</red>
+           <green>0</green>
+           <blue>0</blue>
           </color>
          </brush>
         </colorrole>
         <colorrole role="Base">
          <brush brushstyle="SolidPattern">
           <color alpha="255">
-           <red>45</red>
-           <green>45</green>
-           <blue>45</blue>
+           <red>0</red>
+           <green>0</green>
+           <blue>0</blue>
           </color>
          </brush>
         </colorrole>
         <colorrole role="Window">
          <brush brushstyle="SolidPattern">
           <color alpha="255">
-           <red>45</red>
-           <green>45</green>
-           <blue>45</blue>
+           <red>0</red>
+           <green>0</green>
+           <blue>0</blue>
           </color>
          </brush>
         </colorrole>
@@ -4179,7 +4179,7 @@
       </palette>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(45, 45, 45);</string>
+      <string notr="true">background-color: rgb(0, 0, 0);</string>
      </property>
      <attribute name="title">
       <string>Timer</string>
