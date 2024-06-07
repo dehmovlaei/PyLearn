@@ -38,15 +38,6 @@ class MyTime:
 
     def time_zone(self, zone):
         for index, t_zone in enumerate(zone):
-            if t_zone == "Iran":
-                tz = pytz.timezone("Iran")
-                time_tz = datetime.now(tz)
-                self.current_time[index] = time_tz.strftime("%H:%M:%S")
-            elif t_zone == "Europe/Berlin":
-                tz = pytz.timezone("Europe/Berlin")
-                time_tz = datetime.now(tz)
-                self.current_time[index] = time_tz.strftime("%H:%M:%S")
-            elif t_zone == "America/New_York":
-                tz = pytz.timezone("America/New_York")
-                time_tz = datetime.now(tz)
-                self.current_time[index] = time_tz.strftime("%H:%M:%S")
+            tz = pytz.timezone(t_zone)
+            time_tz = datetime.now(tz)
+            self.current_time[index] = time_tz.strftime("%H:%M:%S")

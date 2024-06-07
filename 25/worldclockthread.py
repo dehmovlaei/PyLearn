@@ -15,8 +15,3 @@ class WorldClockThread(QThread):
         while True:
             self.time.time_zone(zone)
             self.signal_counter.emit(self.time)
-
-    def reset(self):
-        self.time.second = 0
-        self.time.minute = 0
-        self.time.hour = 0

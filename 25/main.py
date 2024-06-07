@@ -1,7 +1,7 @@
 import sys
-from PySide6.QtWidgets import *
 from PySide6.QtCore import *
-from PySide6.QtGui import QFontDatabase, QFont
+from PySide6.QtWidgets import *
+from PySide6.QtGui import QFontDatabase
 from mainwindow import Ui_MainWindow
 from timerthread import TimerThread
 from stopwatchthread import StopWatchThread
@@ -104,7 +104,6 @@ if __name__ == "__main__":
                                                           f' font-size: 50px; color: rgb(255, 0, 127);')
     main_window.window().ui.lbl_clock_usa.setStyleSheet(f'font-family: {font_family};'
                                                           f' font-size: 50px; color: rgb(255, 0, 127);')
-
 
     main_window.window().ui.lbl_stopwatch.setText("0:0:0")
     thread_stopwatch = StopWatchThread()
