@@ -1,10 +1,10 @@
 import sys
-
+from functools import partial
 from PySide6.QtGui import QIcon
 from PySide6.QtWidgets import *
 from mainwindow import Ui_MainWindow
 from database import Database
-from functools import partial
+
 
 
 class MainWindow(QMainWindow):

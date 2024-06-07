@@ -41,3 +41,10 @@ class MyTime:
             tz = pytz.timezone(t_zone)
             time_tz = datetime.now(tz)
             self.current_time[index] = time_tz.strftime("%H:%M:%S")
+
+    def alarm(self, alarm_list):
+        print(alarm_list)
+        for time in alarm_list:
+            time_now = datetime.now()
+            if time == time_now:
+                ...
