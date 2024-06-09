@@ -12,21 +12,21 @@ class Database:
 
     def add_alarm(self, new_name, new_time):
         try:
-            query = f"INSERT INTO alarm(name, time) VALUES ('{new_name}', '{new_time}')"
+            query = f"INSERT INTO alarms(name, time) VALUES ('{new_name}', '{new_time}')"
             self.cursor.execute(query)
             self.connection.commit()
             return True
         except:
             return False
 
-    def update_alarm(self, new_name, new_time):
-        query = f"UPDATE alarm SET name = '{new_name}' WHERE time = '{new_time}'"
+    def update_alarm(self, new_name, new_time, alarm_id):
+        query = f"UPDATE alarms SET name = '{new_name}', time = '{new_time}' WHERE id = '{alarm_id}'"
         self.cursor.execute(query)
         self.connection.commit()
 
-    def delete_alarm(self, index):
+    def delete_alarm(self, alarm_id):
         try:
-            query = f"DELETE FROM alarm WHERE index = '{index}'"
+            query = f"DELETE FROM alarms WHERE id = '{alarm_id}'"
             self.cursor.execute(query)
             self.connection.commit()
             return True

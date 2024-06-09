@@ -1,6 +1,6 @@
 import sys
 from functools import partial
-from PySide6.QtGui import QIcon
+from PySide6.QtGui import *
 from PySide6.QtCore import *
 from PySide6.QtWidgets import *
 from PySide6.QtGui import QFontDatabase
@@ -89,9 +89,9 @@ class MainWindow(QMainWindow):
                                               f'background-color: rgb(0, 0, 0);')
         self.ui.tb_second_timer.setStyleSheet(f'font-family: {self.font_family};color: rgb(255, 0, 127);'
                                               f'background-color: rgb(0, 0, 0);')
-        self.ui.lbl_clock_iran.setStyleSheet(f'font-family: {self.font_family};color: rgb(255, 170, 0);')
-        self.ui.lbl_clock_germany.setStyleSheet(f'font-family: {self.font_family};color: rgb(255, 170, 0);')
-        self.ui.lbl_clock_usa.setStyleSheet(f'font-family: {self.font_family};color: rgb(255, 170, 0);')
+        self.ui.lbl_clock_iran.setStyleSheet(f'font-family: {self.font_family};color: rgb(255, 0, 127);')
+        self.ui.lbl_clock_germany.setStyleSheet(f'font-family: {self.font_family};color: rgb(255, 0, 127);')
+        self.ui.lbl_clock_usa.setStyleSheet(f'font-family: {self.font_family};color: rgb(255, 0, 127);')
         self.ui.btn_start_stopwatch.clicked.connect(start_stopwatch)
         self.ui.btn_stop_stopwatch.clicked.connect(stop_stopwatch)
         self.ui.btn_reset_stopwatch.clicked.connect(reset_stopwatch)
@@ -108,30 +108,40 @@ class MainWindow(QMainWindow):
             widget.deleteLater()
         # fill layout
         alarms_list = self.database.get_alarms()
-        btn_add = QPushButton()
-        btn_add.setIcon(QIcon("../25/res/plus.png"))
-        btn_add.setIconSize(QSize(32, 32))
-        self.ui.gl_alarms.addWidget(btn_add, 0, 5)
         for i in range(0, len(alarms_list)):
-            lbl_1 = QLabel()
-            lbl_1.setText(f'{alarms_list[i][1]}:')
+            txt_1 = QTextEdit()
+            txt_1.setText(alarms_list[i][1])
             initial_time_str = alarms_list[i][2]
             initial_time = QTime.fromString(initial_time_str, 'HH:mm:ss')
             tme_1 = QTimeEdit()
             tme_1.setTime(initial_time)
-            tme_1.setStyleSheet(f'font-family:Comic Sans MS; 'f' font-size: 22px; color: rgb(255, 170, 0);')
-            lbl_1.setStyleSheet(f'font-family:Comic Sans MS; 'f' font-size: 25px; color: rgb(255, 255, 255);')
+            tme_1.setStyleSheet(f'font-family:digital-7; 'f' font-size: 30px; color: rgb(255, 0, 127);')
+            txt_1.setStyleSheet(f'font-family:digital-7; 'f' font-size: 30px; color: rgb(255, 255, 255);')
+            txt_1.setMaximumWidth(252)
+            txt_1.setMaximumHeight(33)
             btn_1 = QPushButton()
             btn_1.setIcon(QIcon("../25/res/bin.png"))
             btn_1.setIconSize(QSize(32, 32))
             btn_2 = QPushButton()
             btn_2.setIcon(QIcon("../25/res/pen.png"))
             btn_2.setIconSize(QSize(32, 32))
-            # btn.clicked.connect(partial(self.del_alarm, alarms_list[i][0]))
-            self.ui.gl_alarms.addWidget(lbl_1, i, 1)
+            btn_1.clicked.connect(partial(self.del_alarm, alarms_list[i][0]))
+            btn_2.clicked.connect(partial(self.edit_alarm, txt_1.toPlainText(), tme_1.text(), alarms_list[i][0]))
+            self.ui.gl_alarms.addWidget(txt_1, i, 1)
             self.ui.gl_alarms.addWidget(tme_1, i, 2)
             self.ui.gl_alarms.addWidget(btn_1, i, 3)
             self.ui.gl_alarms.addWidget(btn_2, i, 4)
+
+    def del_alarm(self, alarm_id):
+        msg = QMessageBox()
+        ans = msg.question(self,'Delete Alarm', "Are you sure you want to delete this Alarm?")
+        if ans == 16384:
+            self.database.delete_alarm(alarm_id)
+            self.read_database()
+
+    def edit_alarm(self, new_name, new_time, alarm_id):
+        self.database.update_alarm(new_name, new_time, alarm_id)
+        self.read_database()
 
 
 if __name__ == "__main__":
