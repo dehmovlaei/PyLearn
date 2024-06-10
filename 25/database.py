@@ -5,7 +5,7 @@ class Database:
         self.cursor = self.connection.cursor()
 
     def get_alarms(self):
-        query = "SELECT id, name, time  FROM alarms"
+        query = "SELECT id, name, alarm_set, time_up, notify  FROM alarms"
         result = self.cursor.execute(query)
         alarms = result.fetchall()
         return alarms
@@ -20,7 +20,7 @@ class Database:
             return False
 
     def update_alarm(self, alarm_id, text, time):
-        query = f"UPDATE alarms SET name = '{text}', time = '{time}' WHERE id = '{alarm_id}'"
+        query = f"UPDATE alarms SET name = '{text}', alarm_set = '{time}' WHERE id = '{alarm_id}'"
         self.cursor.execute(query)
         self.connection.commit()
 
@@ -32,3 +32,8 @@ class Database:
             return True
         except:
             return False
+
+    def done_alarm(self, alarm_id):
+        query = f"UPDATE alarms SET notify = '{1}' WHERE id = '{alarm_id}'"
+        self.cursor.execute(query)
+        self.connection.commit()

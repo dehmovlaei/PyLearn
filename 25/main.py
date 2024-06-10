@@ -1,5 +1,5 @@
 import sys
-import time
+import datetime
 from functools import partial
 from PySide6.QtGui import *
 from PySide6.QtCore import *
@@ -10,6 +10,7 @@ from database import Database
 from timerthread import TimerThread
 from stopwatchthread import StopWatchThread
 from worldclockthread import WorldClockThread
+from alarmthread import AlarmThread
 
 
 @Slot()
@@ -66,6 +67,21 @@ def show_time_timer(time):
         notification.setWindowTitle("Xx0xX")
         notification.setText("Time UP")
         notification.exec()
+
+@Slot()
+def check_alarm():
+    database = Database()
+    alarm_list = database.get_alarms()
+    current_time = datetime.datetime.now().strftime("%#I:%M %p")
+    for i in range(0, len(alarm_list)):
+        print(alarm_list[i][2], current_time)
+        if alarm_list[i][2] == current_time and alarm_list[i][4] != 1:
+            database.done_alarm(alarm_list[i][0])
+            notification = QMessageBox()
+            notification.setWindowTitle("Xx0xX")
+            notification.setText(f'Time UP...! Do :{alarm_list[i][1]}')
+            notification.exec()
+
 
 @Slot()
 def show_world_clock(time):
@@ -159,6 +175,7 @@ class MainWindow(QMainWindow):
         alarm_list_as_list[index] = (alarm_list_as_list[index][0], alarm_list_as_list[index][1], updated_time)
         self.alarm_list = tuple(alarm_list_as_list)
 
+
     def add_alarm(self):
         self.database.add_alarm(self.ui.tb_AddDesc.toPlainText(), self.ui.tme_add.text())
         self.ui.tb_AddDesc.clear()
@@ -187,8 +204,11 @@ if __name__ == "__main__":
     thread_stopwatch = StopWatchThread()
     thread_timer = TimerThread()
     thread_world_clock = WorldClockThread()
+    thread_alarm = AlarmThread()
     thread_world_clock.start()
+    thread_alarm.start()
     thread_stopwatch.signal_counter.connect(show_time_stopwatch)
     thread_timer.signal_counter.connect(show_time_timer)
     thread_world_clock.signal_counter.connect(show_world_clock)
+    thread_alarm.signal_counter.connect(check_alarm)
     app.exec()
