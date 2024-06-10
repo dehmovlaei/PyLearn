@@ -5,22 +5,22 @@ class Database:
         self.cursor = self.connection.cursor()
 
     def get_alarms(self):
-        query = "SELECT * FROM alarms"
+        query = "SELECT id, name, time  FROM alarms"
         result = self.cursor.execute(query)
         alarms = result.fetchall()
         return alarms
 
-    def add_alarm(self, new_name, new_time):
+    def add_alarm(self, text, time):
         try:
-            query = f"INSERT INTO alarms(name, time) VALUES ('{new_name}', '{new_time}')"
+            query = f"INSERT INTO alarms(name, time) VALUES ('{text}', '{time}')"
             self.cursor.execute(query)
             self.connection.commit()
             return True
         except:
             return False
 
-    def update_alarm(self, new_name, new_time, alarm_id):
-        query = f"UPDATE alarms SET name = '{new_name}', time = '{new_time}' WHERE id = '{alarm_id}'"
+    def update_alarm(self, alarm_id, text, time):
+        query = f"UPDATE alarms SET name = '{text}', time = '{time}' WHERE id = '{alarm_id}'"
         self.cursor.execute(query)
         self.connection.commit()
 

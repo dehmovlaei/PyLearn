@@ -1,4 +1,5 @@
 import sys
+import time
 from functools import partial
 from PySide6.QtGui import *
 from PySide6.QtCore import *
@@ -75,13 +76,15 @@ def show_world_clock(time):
 
 class MainWindow(QMainWindow):
     def __init__(self):
-        self.fontId = QFontDatabase.addApplicationFont('../25/res/fs-sevegment.ttf')
-        self.font_family = QFontDatabase.applicationFontFamilies(self.fontId)[0]
         super().__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.database = Database()
-        self.read_database()
+        self.fontId = QFontDatabase.addApplicationFont('../25/res/fs-sevegment.ttf')
+        self.font_family = QFontDatabase.applicationFontFamilies(self.fontId)[0]
+        # Store references to QTextEdit widgets
+        self.alarm_list, self.text_edit_widgets, self.time_edit_widgets = [], [], []
+        self.load_dynamic_form()
         self.ui.lbl_stopwatch.setStyleSheet(f'font-family: {self.font_family};color: rgb(255, 0, 127);')
         self.ui.tb_hour_timer.setStyleSheet(f'font-family: {self.font_family};color: rgb(255, 0, 127);'
                                             f'background-color: rgb(0, 0, 0);')
@@ -98,8 +101,9 @@ class MainWindow(QMainWindow):
         self.ui.btn_start_timer.clicked.connect(start_timer)
         self.ui.btn_stop_timer.clicked.connect(stop_timer)
         self.ui.btn_reset_timer.clicked.connect(reset_timer)
+        self.ui.btn_add.clicked.connect(self.add_alarm)
 
-    def read_database(self):
+    def load_dynamic_form(self):
         # clean layout
         layout = self.ui.gl_alarms
         for i in (range(layout.count())):
@@ -107,14 +111,19 @@ class MainWindow(QMainWindow):
             widget = item.widget()
             widget.deleteLater()
         # fill layout
-        alarms_list = self.database.get_alarms()
-        for i in range(0, len(alarms_list)):
+        self.alarm_list = self.database.get_alarms()
+        self.text_edit_widgets, self.time_edit_widgets = [], []
+        for j in range(0, len(self.alarm_list)):
             txt_1 = QTextEdit()
-            txt_1.setText(alarms_list[i][1])
-            initial_time_str = alarms_list[i][2]
-            initial_time = QTime.fromString(initial_time_str, 'HH:mm:ss')
+            txt_1.setText(self.alarm_list[j][1])
+            self.text_edit_widgets.append(txt_1)  # Store the reference
+            txt_1.textChanged.connect(self.handle_text_edit_change)
+            initial_time_str = self.alarm_list[j][2]
+            initial_time = QTime.fromString(initial_time_str, 'h:m ap')
             tme_1 = QTimeEdit()
             tme_1.setTime(initial_time)
+            self.time_edit_widgets.append(tme_1)
+            tme_1.timeChanged.connect(self.handle_time_edit_change)
             tme_1.setStyleSheet(f'font-family:digital-7; 'f' font-size: 30px; color: rgb(255, 0, 127);')
             txt_1.setStyleSheet(f'font-family:digital-7; 'f' font-size: 30px; color: rgb(255, 255, 255);')
             txt_1.setMaximumWidth(252)
@@ -125,23 +134,50 @@ class MainWindow(QMainWindow):
             btn_2 = QPushButton()
             btn_2.setIcon(QIcon("../25/res/pen.png"))
             btn_2.setIconSize(QSize(32, 32))
-            btn_1.clicked.connect(partial(self.del_alarm, alarms_list[i][0]))
-            btn_2.clicked.connect(partial(self.edit_alarm, txt_1.toPlainText(), tme_1.text(), alarms_list[i][0]))
-            self.ui.gl_alarms.addWidget(txt_1, i, 1)
-            self.ui.gl_alarms.addWidget(tme_1, i, 2)
-            self.ui.gl_alarms.addWidget(btn_1, i, 3)
-            self.ui.gl_alarms.addWidget(btn_2, i, 4)
+            btn_1.clicked.connect(partial(self.del_alarm, j))
+            btn_2.clicked.connect(partial(self.edit_alarm, j))
+            self.ui.gl_alarms.addWidget(txt_1, j, 1)
+            self.ui.gl_alarms.addWidget(tme_1, j, 2)
+            self.ui.gl_alarms.addWidget(btn_1, j, 3)
+            self.ui.gl_alarms.addWidget(btn_2, j, 4)
 
-    def del_alarm(self, alarm_id):
+    @Slot()
+    def handle_text_edit_change(self):
+        sender = self.sender()  # Get the widget that emitted the signal
+        updated_text = sender.toPlainText()
+        index = self.text_edit_widgets.index(sender)
+        alarm_list_as_list = list(self.alarm_list)
+        alarm_list_as_list[index] = (alarm_list_as_list[index][0], updated_text, alarm_list_as_list[index][2])
+        self.alarm_list = tuple(alarm_list_as_list)
+
+    @Slot()
+    def handle_time_edit_change(self):
+        sender = self.sender()  # Get the widget that emitted the signal
+        updated_time = sender.text()
+        index = self.time_edit_widgets.index(sender)
+        alarm_list_as_list = list(self.alarm_list)
+        alarm_list_as_list[index] = (alarm_list_as_list[index][0], alarm_list_as_list[index][1], updated_time)
+        self.alarm_list = tuple(alarm_list_as_list)
+
+    def add_alarm(self):
+        self.database.add_alarm(self.ui.tb_AddDesc.toPlainText(), self.ui.tme_add.text())
+        self.ui.tb_AddDesc.clear()
+        self.ui.tme_add.setTime(QTime.currentTime())
+        self.load_dynamic_form()
+
+    def del_alarm(self, j):
         msg = QMessageBox()
-        ans = msg.question(self,'Delete Alarm', "Are you sure you want to delete this Alarm?")
+        ans = msg.question(self, 'Delete Alarm', "Are you sure you want to delete this Alarm?")
         if ans == 16384:
-            self.database.delete_alarm(alarm_id)
-            self.read_database()
+            self.database.delete_alarm(self.alarm_list[j][0])
+            self.load_dynamic_form()
 
-    def edit_alarm(self, new_name, new_time, alarm_id):
-        self.database.update_alarm(new_name, new_time, alarm_id)
-        self.read_database()
+    def edit_alarm(self, j):
+        msg = QMessageBox()
+        ans = msg.question(self, 'Edit Alarm', "Are you sure you want to Edit this Alarm?")
+        if ans == 16384:
+            self.database.update_alarm(self.alarm_list[j][0], self.alarm_list[j][1], self.alarm_list[j][2])
+            self.load_dynamic_form()
 
 
 if __name__ == "__main__":

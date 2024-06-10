@@ -8,7 +8,7 @@ class Alarm(QThread):
 
     def __init__(self):
         super().__init__()
-        self.time = MyTime(0, 0, 0)
+        self.time = MyTime(12, 00, 00)
         self.database = Database()
 
     def run(self):

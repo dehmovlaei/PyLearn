@@ -2668,9 +2668,9 @@ border-radius: 20px;</string>
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>40</y>
+        <y>50</y>
         <width>481</width>
-        <height>271</height>
+        <height>261</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="gl_alarms"/>
@@ -2679,7 +2679,7 @@ border-radius: 20px;</string>
       <property name="geometry">
        <rect>
         <x>378</x>
-        <y>10</y>
+        <y>7</y>
         <width>101</width>
         <height>31</height>
        </rect>
@@ -2707,7 +2707,7 @@ border-radius: 10px;</string>
       <property name="geometry">
        <rect>
         <x>2</x>
-        <y>10</y>
+        <y>7</y>
         <width>251</width>
         <height>31</height>
        </rect>
@@ -2730,7 +2730,7 @@ border-radius: 10px;</string>
       <property name="geometry">
        <rect>
         <x>255</x>
-        <y>10</y>
+        <y>7</y>
         <width>121</width>
         <height>31</height>
        </rect>
