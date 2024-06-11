@@ -12,7 +12,7 @@ class Database:
 
     def add_alarm(self, text, time):
         try:
-            query = f"INSERT INTO alarms(name, time) VALUES ('{text}', '{time}')"
+            query = f"INSERT INTO alarms(name, alarm_set) VALUES ('{text}', '{time}')"
             self.cursor.execute(query)
             self.connection.commit()
             return True

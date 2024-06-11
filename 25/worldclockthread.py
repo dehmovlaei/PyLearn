@@ -1,3 +1,5 @@
+import time
+
 from PySide6.QtCore import *
 from mytime import MyTime
 
@@ -14,3 +16,4 @@ class WorldClockThread(QThread):
         while True:
             self.time.time_zone(zone)
             self.signal_counter.emit(self.time)
+            time.sleep(1)

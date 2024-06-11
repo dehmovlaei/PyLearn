@@ -13,4 +13,4 @@ class AlarmThread(QThread):
     def run(self):
         while True:
             self.signal_counter.emit(self.time)
-            time.sleep(15)
+            time.sleep(5)

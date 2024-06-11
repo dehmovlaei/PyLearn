@@ -74,7 +74,6 @@ def check_alarm():
     alarm_list = database.get_alarms()
     current_time = datetime.datetime.now().strftime("%#I:%M %p")
     for i in range(0, len(alarm_list)):
-        print(alarm_list[i][2], current_time)
         if alarm_list[i][2] == current_time and alarm_list[i][4] != 1:
             database.done_alarm(alarm_list[i][0])
             notification = QMessageBox()
@@ -174,7 +173,6 @@ class MainWindow(QMainWindow):
         alarm_list_as_list = list(self.alarm_list)
         alarm_list_as_list[index] = (alarm_list_as_list[index][0], alarm_list_as_list[index][1], updated_time)
         self.alarm_list = tuple(alarm_list_as_list)
-
 
     def add_alarm(self):
         self.database.add_alarm(self.ui.tb_AddDesc.toPlainText(), self.ui.tme_add.text())
