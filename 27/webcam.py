@@ -9,7 +9,7 @@ writer = cv2.VideoWriter('mywebcam.MP4v', cv2.VideoWriter_fourcc(*'MJPG'), 30, (
 while True:
     _, frame = cap.read()
     frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-    _, frame = cv2.threshold(frame, 100, 255, cv2.THRESH_BINARY)
+    _, frame = cv2.threshold(frame, 75, 255, cv2.THRESH_BINARY)
     writer.write(frame)
     cv2.imshow("result", frame)
     if cv2.waitKey(25) & 0xFF == ord('q'):
