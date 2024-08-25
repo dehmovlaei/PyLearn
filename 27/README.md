@@ -9,4 +9,4 @@ c# PyLearn Assignments
 | ![concentric](./res/bat.jpg) | ![concentric](./res/bat_bw.jpg)   |
 | TV Noise                     | ![concentric](./res/tv_noise.gif) |
 | Landscape Snowfll            | ![concentric](./res/snowfall.gif) |
-| Color detect with WEBCAM     | ![concentric](./res/detect.avi)   |
+| Color detect with WEBCAM     | ![concentric](./res/detect.png)   |
