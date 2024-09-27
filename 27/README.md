@@ -4,7 +4,7 @@ c# PyLearn Assignments
 ---
 | File                         | Description                       |
 |------------------------------|-----------------------------------|
-| opencv                       | some simple ability of cv2        |
+| opencv                       | some simple functionality of cv2  |
 | Original                     | Inverted                          |
 | ![concentric](./res/bat.jpg) | ![concentric](./res/bat_bw.jpg)   |
 | TV Noise                     | ![concentric](./res/tv_noise.gif) |
